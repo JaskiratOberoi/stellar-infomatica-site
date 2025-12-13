@@ -33,8 +33,11 @@ export function Hero() {
                     <Button
                         size="lg"
                         className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold h-12 px-8 text-base shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300"
+                        asChild
                     >
-                        Request Architecture Demo
+                        <a href="mailto:info@stellarinfomatica.com">
+                            Request Architecture Demo
+                        </a>
                     </Button>
                     <Button
                         size="lg"
@@ -46,6 +49,6 @@ export function Hero() {
                 </div>
 
             </div>
-        </section>
+        </section >
     );
 }

@@ -10,19 +10,6 @@ export function Navbar() {
                     Stellar Infomatica
                 </Link>
 
-                {/* Navigation */}
-                <nav className="hidden md:flex items-center gap-8">
-                    {["Home", "Software", "Technology", "About"].map((item) => (
-                        <Link
-                            key={item}
-                            href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                            {item}
-                        </Link>
-                    ))}
-                </nav>
-
                 {/* CTA */}
                 <Button>Request Demo</Button>
             </div>
