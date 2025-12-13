@@ -97,10 +97,10 @@ export function TwinDashboard() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="h-full flex flex-col items-center justify-center min-h-[300px] md:min-h-0"
+                            className="h-full flex flex-col items-center justify-center min-h-[250px] md:min-h-0"
                         >
                             <h3 className="text-base md:text-lg font-semibold text-white mb-4 md:mb-8">Trisomy 21 Analysis</h3>
-                            <div className="flex flex-wrap justify-center gap-6 md:gap-12 w-full">
+                            <div className="flex flex-wrap justify-center gap-4 md:gap-12 w-full">
                                 <RiskDonut
                                     label="Fetus A"
                                     percentage={98}

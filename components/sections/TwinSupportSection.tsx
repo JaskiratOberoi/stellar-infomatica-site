@@ -42,7 +42,7 @@ export function TwinSupportSection() {
                 <div className="container mx-auto px-4 relative h-full flex flex-col items-center justify-center">
 
                     {/* Titles Layer */}
-                    <div className="absolute top-[10%] md:top-[15%] w-full text-center z-20 px-4 pointer-events-none">
+                    <div className="absolute top-[10%] md:top-[12%] w-full text-center z-20 px-4 pointer-events-none">
                         <motion.h2
                             style={{ opacity: title1Opacity }}
                             className="text-2xl sm:text-3xl md:text-5xl font-bold text-white absolute w-full left-0 top-0 leading-tight"
