@@ -11,7 +11,9 @@ export function Navbar() {
                 </Link>
 
                 {/* CTA */}
-                <Button>Request Demo</Button>
+                <Button asChild>
+                    <a href="mailto:info@stellarinfomatica.com">Request Demo</a>
+                </Button>
             </div>
         </header>
     );

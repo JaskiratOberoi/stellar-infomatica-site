@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { HeroBackground } from "@/components/hero/HeroBackground";
@@ -36,18 +37,20 @@ export function Hero() {
                         asChild
                     >
                         <a href="mailto:info@stellarinfomatica.com">
-                            Request Architecture Demo
+                            Request Demo
                         </a>
                     </Button>
                     <Button
                         size="lg"
                         variant="outline"
                         className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white h-12 px-8 text-base backdrop-blur-sm"
+                        asChild
                     >
-                        Explore Technology
+                        <Link href="#contact">
+                            Get in Touch
+                        </Link>
                     </Button>
                 </div>
-
             </div>
         </section >
     );

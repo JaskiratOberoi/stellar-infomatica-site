@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 
 export function ContactFooter() {
     return (
-        <footer className="bg-slate-950 border-t border-slate-900 pt-24 pb-8 relative z-10">
+        <footer id="contact" className="bg-slate-950 border-t border-slate-900 pt-24 pb-8 relative z-10">
             <div className="container mx-auto px-4">
 
                 {/* Main Content Grid */}

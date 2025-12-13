@@ -6,8 +6,25 @@ import { Navbar } from "@/components/layout/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stellar Infomatica",
-  description: "Advanced Prenatal Screening Software",
+  metadataBase: new URL('https://stellarinfomatica.com'),
+  title: {
+    default: "Stellar Infomatica | Precision Prenatal Screening Software",
+    template: "%s | Stellar Infomatica"
+  },
+  description: "Transform raw pathology data into lifesaving insights. The world’s first seamless Dual Marker Twin Support ecosystem for modern diagnostic centers.",
+  keywords: ["prenatal screening", "dual marker", "triple marker", "quad marker", "pathology software", "LIS integration", "twin pregnancy screening"],
+  openGraph: {
+    title: "Stellar Infomatica | Precision Prenatal Screening Software",
+    description: "Transform raw pathology data into lifesaving insights. The world’s first seamless Dual Marker Twin Support ecosystem.",
+    url: 'https://stellarinfomatica.com',
+    siteName: 'Stellar Infomatica',
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({
