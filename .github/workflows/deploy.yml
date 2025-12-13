@@ -25,11 +25,14 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Deploy to FTP
+      - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          port: 65002
           local-dir: ./out/
           server-dir: ./public_html/
+          protocol: ftps
+          strict: false
