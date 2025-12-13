@@ -57,6 +57,23 @@ export function HeroBackground() {
 
     return (
         <div className="absolute inset-0 -z-10 overflow-hidden bg-slate-950">
+            {/* Animated Grid Overlay */}
+            <motion.div
+                className="absolute inset-0 z-0 opacity-[0.03]"
+                style={{
+                    backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+                    backgroundSize: "40px 40px",
+                }}
+                animate={{
+                    backgroundPosition: ["0px 0px", "40px 40px"],
+                }}
+                transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "linear",
+                }}
+            />
+
             {/* Base gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/90 z-10" />
 
