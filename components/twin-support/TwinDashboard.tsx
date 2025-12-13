@@ -8,20 +8,22 @@ import { TwinGrowthChart } from "./TwinGrowthChart";
 import { cn } from "@/lib/utils";
 
 function RiskDonut({ percentage, color, label, probability }: { percentage: number; color: string; label: string; probability: string }) {
-    const circumference = 2 * Math.PI * 40; // r=40
+    const radius = 56;
+    const center = 80;
+    const circumference = 2 * Math.PI * radius;
     const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
     return (
-        <div className="flex flex-col items-center gap-2">
-            <div className="relative w-32 h-32 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+            <div className="relative w-40 h-40 flex items-center justify-center">
                 {/* Background Circle */}
                 <svg className="absolute w-full h-full transform -rotate-90">
-                    <circle cx="64" cy="64" r="40" stroke="currentColor" strokeWidth="8" fill="transparent" className="text-slate-800" />
+                    <circle cx={center} cy={center} r={radius} stroke="currentColor" strokeWidth="8" fill="transparent" className="text-slate-800" />
                     <motion.circle
                         initial={{ strokeDashoffset: circumference }}
                         animate={{ strokeDashoffset }}
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        cx="64" cy="64" r="40"
+                        cx={center} cy={center} r={radius}
                         stroke="currentColor" strokeWidth="8" fill="transparent"
                         strokeLinecap="round"
                         className={color}
@@ -29,11 +31,11 @@ function RiskDonut({ percentage, color, label, probability }: { percentage: numb
                     />
                 </svg>
                 <div className="absolute flex flex-col items-center">
-                    <span className="text-xl font-bold text-white">{probability}</span>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest">Risk</span>
+                    <span className="text-2xl font-bold text-white">{probability}</span>
+                    <span className="text-xs text-slate-400 uppercase tracking-widest mt-1">Risk</span>
                 </div>
             </div>
-            <span className="text-sm font-medium text-slate-300">{label}</span>
+            <span className="text-base font-medium text-slate-300">{label}</span>
         </div>
     );
 }
