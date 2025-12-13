@@ -1,29 +1,24 @@
-name: Deploy to Hostinger
-
+name: Build and Deploy
 on:
   push:
-    branches:
-      - main
-
+    branches: [main]
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: Build and Deploy
     steps:
-      - name: Checkout code
+      - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build static site
-        run: npm run build
+      - name: 🔨 Build Project
+        run: |
+          npm ci
+          npm run build
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -31,7 +26,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 65002
+          port: 21
           local-dir: ./out/
           server-dir: ./public_html/
           protocol: ftps
