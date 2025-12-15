@@ -63,15 +63,10 @@ export default function ClinicalPage() {
                         </p>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-lg border border-slate-800 relative">
+                            <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-lg border border-slate-800">
                                 <div className="w-2 h-2 rounded-full bg-cyan-500 mt-2 flex-shrink-0"></div>
-                                <div className="flex-1">
-                                    <div className="flex items-center gap-2 mb-1">
-                                        <h4 className="text-white font-semibold">IVF Treatment</h4>
-                                        <span className="inline-flex items-center rounded-full border border-amber-500/50 bg-amber-950/20 text-amber-400 px-2 py-0.5 text-xs font-semibold">
-                                            Coming Soon
-                                        </span>
-                                    </div>
+                                <div>
+                                    <h4 className="text-white font-semibold mb-1">IVF Treatment</h4>
                                     <p className="text-slate-400 text-sm">
                                         Correction factors applied for in-vitro fertilization pregnancies.
                                     </p>
