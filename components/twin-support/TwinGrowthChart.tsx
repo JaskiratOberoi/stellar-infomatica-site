@@ -45,7 +45,7 @@ export function TwinGrowthChart({ showReference }: { showReference?: boolean }) 
                     animate={{ opacity: 1 }}
                     className="absolute top-[40%] left-0 w-full h-[2px] border-t-2 border-dashed border-white/30"
                 >
-                    <span className="absolute -top-6 right-2 text-xs text-slate-400">Pop. Median</span>
+                    <span className="absolute -top-6 right-2 text-xs text-slate-400">Chorionicity-Specific Median</span>
                 </motion.div>
             )}
         </div>

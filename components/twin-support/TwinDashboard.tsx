@@ -76,7 +76,10 @@ export function TwinDashboard() {
                             transition={{ duration: 0.3 }}
                             className="h-full flex flex-col justify-center min-h-[300px] md:min-h-0"
                         >
-                            <h3 className="text-base md:text-lg font-semibold text-white mb-4">Maternal Serum Markers (MoM)</h3>
+                            <h3 className="text-base md:text-lg font-semibold text-white mb-2">Maternal Serum Markers (MoM)</h3>
+                            <p className="text-xs md:text-sm text-slate-400 mb-4">
+                                Chorionicity-specific medians with IVF correction factors applied to user-defined population parameters
+                            </p>
                             <TwinGrowthChart showReference={showReference} />
                             <div className="flex gap-4 mt-4 justify-center text-xs md:text-sm">
                                 <div className="flex items-center gap-2">
@@ -87,6 +90,11 @@ export function TwinDashboard() {
                                     <span className="w-3 h-3 rounded-full bg-fuchsia-500"></span>
                                     <span className="text-slate-300">Twin B (CRL 62mm)</span>
                                 </div>
+                            </div>
+                            <div className="mt-4 pt-4 border-t border-slate-800">
+                                <p className="text-[10px] md:text-xs text-slate-500 text-center italic">
+                                    Immutable Audit Trail: Every risk recalculation is logged for ISO 13485 compliance
+                                </p>
                             </div>
                         </motion.div>
                     </TabsContent>
@@ -99,7 +107,10 @@ export function TwinDashboard() {
                             transition={{ duration: 0.3 }}
                             className="h-full flex flex-col items-center justify-center min-h-[250px] md:min-h-0"
                         >
-                            <h3 className="text-base md:text-lg font-semibold text-white mb-4 md:mb-8">Trisomy 21 Analysis</h3>
+                            <h3 className="text-base md:text-lg font-semibold text-white mb-2">Trisomy 21 Analysis</h3>
+                            <p className="text-xs md:text-sm text-slate-400 mb-4 md:mb-6">
+                                Independent risk calculations using chorionicity-specific medians and median calculations
+                            </p>
                             <div className="flex flex-wrap justify-center gap-4 md:gap-12 w-full">
                                 <RiskDonut
                                     label="Fetus A"
@@ -113,6 +124,11 @@ export function TwinDashboard() {
                                     color="text-fuchsia-500"
                                     probability="1:4200"
                                 />
+                            </div>
+                            <div className="mt-6 pt-4 border-t border-slate-800">
+                                <p className="text-[10px] md:text-xs text-slate-500 text-center italic">
+                                    Immutable Audit Trail: Every risk recalculation is logged for ISO 13485 compliance
+                                </p>
                             </div>
                         </motion.div>
                     </TabsContent>

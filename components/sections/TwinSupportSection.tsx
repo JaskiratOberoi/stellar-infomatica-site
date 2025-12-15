@@ -19,19 +19,21 @@ export function TwinSupportSection() {
     const streamProgress = useTransform(scrollYProgress, [0, 0.45], [0, 1]);
 
     // Opacity for the stream: it separates, then fades out as Dashboard enters
-    const streamOpacity = useTransform(scrollYProgress, [0.4, 0.55], [1, 0]);
-    const streamScale = useTransform(scrollYProgress, [0.4, 0.55], [1, 0.8]);
+    const streamOpacity = useTransform(scrollYProgress, [0.4, 0.5], [1, 0]);
+    const streamScale = useTransform(scrollYProgress, [0.4, 0.5], [1, 0.8]);
 
-    // Phase 3: Dashboard Entry (0.5 -> 0.7)
-    const dashboardY = useTransform(scrollYProgress, [0.5, 0.75], [100, 0]);
-    const dashboardOpacity = useTransform(scrollYProgress, [0.55, 0.75], [0, 1]);
+    // Phase 3: Dashboard Entry (0.45 -> 0.6) - ends 10% earlier to prevent header overlap, final position 20% lower
+    const dashboardY = useTransform(scrollYProgress, [0.45, 0.6], [100, 20]);
+    const dashboardOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
 
     // Text Transition
     // 0 - 0.4: "The Challenge..."
-    // 0.4 - 0.6: Transition state
-    // 0.6+: "The Solution..."
+    // 0.4 - 0.55: Transition state
+    // 0.55+: "The Solution..."
     const title1Opacity = useTransform(scrollYProgress, [0.35, 0.45], [1, 0]);
-    const title2Opacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
+    const title2Opacity = useTransform(scrollYProgress, [0.45, 0.55], [0, 1]);
+    // Paragraph text fades out as dashboard appears to prevent overlap
+    const paragraphOpacity = useTransform(scrollYProgress, [0.45, 0.55], [1, 0]);
 
     return (
         <section ref={containerRef} className="h-[300vh] relative bg-slate-950">
@@ -43,18 +45,34 @@ export function TwinSupportSection() {
 
                     {/* Titles Layer */}
                     <div className="absolute top-[10%] md:top-[12%] w-full text-center z-20 px-4 pointer-events-none">
-                        <motion.h2
+                        <motion.div
                             style={{ opacity: title1Opacity }}
-                            className="text-2xl sm:text-3xl md:text-5xl font-bold text-white absolute w-full left-0 top-0 leading-tight"
+                            className="absolute w-full left-0 top-0"
                         >
-                            The Challenge: Genetic Overlap
-                        </motion.h2>
-                        <motion.h2
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
+                                The Challenge: Genetic Overlap
+                            </h2>
+                            <motion.p 
+                                style={{ opacity: paragraphOpacity }}
+                                className="max-w-3xl mx-auto text-sm md:text-base text-slate-400 leading-relaxed mt-4"
+                            >
+                                Traditional prenatal screening software treats twin pregnancies as a special case—applying risk adjustments and population medians retroactively. This approach treats twins as an exception to the rule, not as distinct biological patients requiring individualized analysis from the moment of data ingestion.
+                            </motion.p>
+                        </motion.div>
+                        <motion.div
                             style={{ opacity: title2Opacity }}
-                            className="text-2xl sm:text-3xl md:text-5xl font-bold text-cyan-400 absolute w-full left-0 top-0 leading-tight"
+                            className="absolute w-full left-0 top-0"
                         >
-                            The Solution: Isolated Algorithms
-                        </motion.h2>
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-cyan-400 leading-tight mb-4">
+                                The Solution: Native Twin Architecture
+                            </h2>
+                            <motion.p 
+                                style={{ opacity: paragraphOpacity }}
+                                className="max-w-3xl mx-auto text-sm md:text-base text-slate-400 leading-relaxed mt-4"
+                            >
+                                Stellar treats each twin as a distinct patient from ingestion, with chorionicity-specific medians, IVF correction factors, and user-defined population parameters. Every risk calculation is performed independently, ensuring clinical precision that legacy systems can't match.
+                            </motion.p>
+                        </motion.div>
                     </div>
 
                     {/* Content Layer */}

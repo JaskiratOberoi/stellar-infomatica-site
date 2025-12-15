@@ -20,13 +20,13 @@ export function Hero() {
 
                 {/* Headline */}
                 <TextReveal
-                    text="Precision in Every Pulse"
+                    text="The Apex of Prenatal Screening Intelligence"
                     className="text-5xl md:text-7xl font-bold tracking-tight text-white justify-center pb-2"
                 />
 
                 {/* Subhead */}
                 <p className="max-w-2xl text-lg md:text-xl text-slate-400 leading-relaxed">
-                    Transform raw pathology data into lifesaving insights. Introducing the world’s first seamless Dual Marker Twin Support ecosystem.
+                    Comprehensive risk assessment for Down's Syndrome, Trisomy 18/13, SLOS, and Pre-eclampsia—powered by advanced Complex Twin Risk Assessment that sets the definitive standard for clinical precision.
                 </p>
 
                 {/* CTA Group */}
