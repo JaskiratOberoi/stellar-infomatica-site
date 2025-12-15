@@ -113,7 +113,7 @@ export function Footer() {
                 {/* Bottom Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-900">
                     <p className="text-slate-400 text-sm mb-4 md:mb-0">
-                        &copy; {currentYear} Stellar Infomatica. All rights reserved.
+                        &copy; {currentYear} Stellar Infomatica, Dubai. All rights reserved.
                     </p>
                     <div className="flex gap-4">
                         {/* Social icon placeholders */}

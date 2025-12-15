@@ -57,9 +57,19 @@ export function PathologyGrid() {
                         pathology.gridSpan
                     )}
                 >
-                    <h3 className="text-xl font-semibold text-white mb-3">
-                        {pathology.name}
-                    </h3>
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                        <h3 className="text-xl font-semibold text-white">
+                            {pathology.name}
+                        </h3>
+                        {(pathology.id === "osb" || pathology.id === "preeclampsia") && (
+                            <Badge
+                                variant="outline"
+                                className="border-amber-500/50 text-amber-400 bg-amber-950/20 hover:bg-amber-950/30 text-xs font-medium whitespace-nowrap"
+                            >
+                                Coming Soon
+                            </Badge>
+                        )}
+                    </div>
                     
                     <p className="text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
                         {pathology.description}

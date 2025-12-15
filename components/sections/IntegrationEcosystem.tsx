@@ -8,7 +8,7 @@ import { ConnectionLine } from "@/components/instruments/ConnectionLine";
 export function IntegrationEcosystem() {
     const instruments = [
         { label: "B.R.A.H.M.S Kryptor", icon: Microscope },
-        { label: "Ares Labs", icon: Activity },
+        { label: "Getein Biotech", icon: Activity },
         { label: "Roche Cobas", icon: Server },
         { label: "Abbott Architect", icon: Database },
     ];
