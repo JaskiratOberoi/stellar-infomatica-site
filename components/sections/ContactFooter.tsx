@@ -5,7 +5,6 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Separator } from "@/components/ui/separator";
 
 export function ContactFooter() {
     return (
@@ -73,23 +72,6 @@ export function ContactFooter() {
                         </form>
                     </div>
 
-                </div>
-
-                {/* Legal Bar */}
-                <Separator className="my-12 bg-slate-800" />
-
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-                    <p className="text-slate-500">
-                        &copy; 2025 Stellar Infomatica.
-                    </p>
-                    <div className="flex gap-8">
-                        <Link href="#" className="text-slate-500 hover:text-cyan-400 transition-colors">
-                            Privacy Policy
-                        </Link>
-                        <Link href="#" className="text-slate-500 hover:text-cyan-400 transition-colors">
-                            Terms of Service
-                        </Link>
-                    </div>
                 </div>
 
             </div>
