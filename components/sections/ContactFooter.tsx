@@ -24,10 +24,10 @@ export function ContactFooter() {
                         </p>
 
                         <Link
-                            href="mailto:info@stellarinfomatica.com"
+                            href="mailto:support@stellarinfomatica.com"
                             className="inline-flex items-center gap-2 text-xl font-medium text-cyan-400 hover:text-cyan-300 transition-colors mt-4 group"
                         >
-                            info@stellarinfomatica.com
+                            support@stellarinfomatica.com
                             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                         </Link>
                     </div>

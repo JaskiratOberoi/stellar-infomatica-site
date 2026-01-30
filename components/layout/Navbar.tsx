@@ -34,7 +34,7 @@ export function Navbar() {
                         </Link>
                     ))}
                     <Button asChild>
-                        <a href="mailto:info@stellarinfomatica.com">Request Demo</a>
+                        <a href="mailto:support@stellarinfomatica.com">Request Demo</a>
                     </Button>
                 </nav>
 
@@ -60,7 +60,7 @@ export function Navbar() {
                                     </Link>
                                 ))}
                                 <Button asChild className="mt-4">
-                                    <a href="mailto:info@stellarinfomatica.com" onClick={() => setIsOpen(false)}>
+                                    <a href="mailto:support@stellarinfomatica.com" onClick={() => setIsOpen(false)}>
                                         Request Demo
                                     </a>
                                 </Button>
