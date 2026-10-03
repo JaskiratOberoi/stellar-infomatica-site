@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { TwinGrowthChart } from "./TwinGrowthChart";
-import { cn } from "@/lib/utils";
 
 function RiskDonut({ percentage, color, label, probability }: { percentage: number; color: string; label: string; probability: string }) {
     const radius = 56;

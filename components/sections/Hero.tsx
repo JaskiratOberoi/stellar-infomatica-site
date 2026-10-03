@@ -26,7 +26,7 @@ export function Hero() {
 
                 {/* Subhead */}
                 <p className="max-w-2xl text-lg md:text-xl text-slate-400 leading-relaxed">
-                    Comprehensive risk assessment for Down's Syndrome, Trisomy 18/13, SLOS, and Pre-eclampsia—powered by advanced Complex Twin Risk Assessment that sets the definitive standard for clinical precision.
+                    Comprehensive risk assessment for Down’s Syndrome, Trisomy 18/13, SLOS, and Pre-eclampsia—powered by advanced Complex Twin Risk Assessment that sets the definitive standard for clinical precision.
                 </p>
 
                 {/* CTA Group */}

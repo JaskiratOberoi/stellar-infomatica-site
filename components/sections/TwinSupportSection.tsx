@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { BioStream } from "@/components/twin-support/BioStream";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { TwinDashboard } from "@/components/twin-support/TwinDashboard";
 
 export function TwinSupportSection() {
@@ -70,7 +69,7 @@ export function TwinSupportSection() {
                                 style={{ opacity: paragraphOpacity }}
                                 className="max-w-3xl mx-auto text-sm md:text-base text-slate-400 leading-relaxed mt-4"
                             >
-                                Stellar treats each twin as a distinct patient from ingestion, with chorionicity-specific medians, IVF correction factors, and user-defined population parameters. Every risk calculation is performed independently, ensuring clinical precision that legacy systems can't match.
+                                Stellar treats each twin as a distinct patient from ingestion, with chorionicity-specific medians, IVF correction factors, and user-defined population parameters. Every risk calculation is performed independently, ensuring clinical precision that legacy systems can’t match.
                             </motion.p>
                         </motion.div>
                     </div>
@@ -145,7 +144,7 @@ export function TwinSupportSection() {
 }
 
 // Inner wrapper to handle MotionValue -> CSS Transform logic cleanly
-function BioStreamWrapper({ progress }: { progress: any }) {
+function BioStreamWrapper({ progress }: { progress: MotionValue<number> }) {
     // separation = progress * 50
     // We create new MotionValues for the Y offset
     const upY = useTransform(progress, [0, 1], [0, -50]);

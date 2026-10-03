@@ -25,7 +25,7 @@ export function AboutMission() {
                         </p>
 
                         <p className="text-slate-400 italic border-l-4 border-cyan-500/30 pl-6 py-2">
-                            We respect the past. We're building the future.
+                            We respect the past. We’re building the future.
                         </p>
                     </div>
                 </div>

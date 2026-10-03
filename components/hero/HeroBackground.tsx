@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const noopSubscribe = () => () => {};
 
 export function HeroBackground() {
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+    // false during SSR and the hydration pass, true once mounted on the client
+    const mounted = useSyncExternalStore(noopSubscribe, () => true, () => false);
 
     if (!mounted) return null;
 
