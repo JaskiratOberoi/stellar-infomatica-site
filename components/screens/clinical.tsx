@@ -22,20 +22,43 @@ export function BioSentryScreen() {
             <Field key={k} label={k} value={v} />
           ))}
         </div>
-        <div className="grid grid-cols-[1.1fr_1fr] gap-2 min-h-0">
-          <Panel title="Marker analysis">
-            <Row head cells={["Marker", "Value", "Unit", "MoM", "Corr. MoM"]} widths={["1.1fr", "0.8fr", "0.7fr", "0.6fr", "0.8fr"]} />
-            {markers.map((m) => (
-              <Row key={m[0]} widths={["1.1fr", "0.8fr", "0.7fr", "0.6fr", "0.8fr"]} cells={[m[0], m[1], <span key="u" className="text-white/55">{m[2]}</span>, m[3], m[4]]} />
+        <div className="grid grid-rows-[auto_1fr] gap-2 min-h-0">
+          <div className="grid grid-cols-[1.1fr_1fr] gap-2">
+            <Panel title="Marker analysis">
+              <Row head cells={["Marker", "Value", "Unit", "MoM", "Corr. MoM"]} widths={["1.1fr", "0.8fr", "0.7fr", "0.6fr", "0.8fr"]} />
+              {markers.map((m) => (
+                <Row key={m[0]} widths={["1.1fr", "0.8fr", "0.7fr", "0.6fr", "0.8fr"]} cells={[m[0], m[1], <span key="u" className="text-white/55">{m[2]}</span>, m[3], m[4]]} />
+              ))}
+              <div className="px-2 py-1.5 text-[9px] text-white/50">Corrections applied: weight 58 kg · South Asian medians · non-smoker</div>
+            </Panel>
+            <Panel title="Risk comparison · Fetus A">
+              <Row head cells={["Aneuploidy", "Background", "Biochem.", "Combined"]} widths={["1fr", "0.9fr", "0.9fr", "0.9fr"]} />
+              {risks.map((r) => (
+                <Row key={r[0]} widths={["1fr", "0.9fr", "0.9fr", "0.9fr"]} cells={[r[0], r[1], r[2], <span key="c" className="text-[#7fe0a4] font-medium">{r[3]}</span>]} />
+              ))}
+              <div className="flex items-center gap-2 px-2 py-1.5 text-[9.5px]"><Chip tone="ok">NTD low risk</Chip><span className="text-white/50">cut-off 1:250</span><span className="ml-auto text-white/50">Fetus B: tab</span></div>
+            </Panel>
+          </div>
+          {/* Risk vs maternal age: three small curves with the case marked */}
+          <div className="grid grid-cols-3 gap-2 min-h-0">
+            {[["Trisomy 21", "M30 54 C 58 51, 80 42, 92 27 S 104 9, 110 3"], ["Trisomy 18", "M30 57 C 60 54, 82 48, 94 33 S 104 15, 110 6"], ["Trisomy 13", "M30 58 C 62 57, 84 51, 96 36 S 105 18, 110 9"]].map(([t, d]) => (
+              <Panel key={t} title={`${t} · risk vs maternal age`} className="min-h-0">
+                <div className="h-full min-h-[60px] p-1.5">
+                  <svg viewBox="0 0 116 66" className="h-full w-full">
+                    {[15, 30, 45].map((y) => <line key={y} x1="14" x2="112" y1={y} y2={y} stroke="rgba(255,255,255,0.08)" strokeWidth="0.4" />)}
+                    <line x1="14" x2="112" y1="60" y2="60" stroke="rgba(255,255,255,0.2)" strokeWidth="0.4" />
+                    <text x="0" y="61.5" fontSize="4" fill="rgba(255,255,255,0.4)">1:5k</text>
+                    <text x="0" y="6" fontSize="4" fill="rgba(255,255,255,0.4)">1:5</text>
+                    <path d={d} fill="none" stroke="#ff5a1f" strokeWidth="1.1" />
+                    <circle cx="52" cy="54" r="1.8" fill="#7fe0a4" />
+                    <text x="55" y="51" fontSize="4" fill="#7fe0a4">29 y · this case</text>
+                    <text x="29" y="65.5" fontSize="3.6" fill="rgba(255,255,255,0.35)">20</text>
+                    <text x="106" y="65.5" fontSize="3.6" fill="rgba(255,255,255,0.35)">45</text>
+                  </svg>
+                </div>
+              </Panel>
             ))}
-          </Panel>
-          <Panel title="Risk comparison · Fetus A">
-            <Row head cells={["Aneuploidy", "Background", "Biochem.", "Combined"]} widths={["1fr", "0.9fr", "0.9fr", "0.9fr"]} />
-            {risks.map((r) => (
-              <Row key={r[0]} widths={["1fr", "0.9fr", "0.9fr", "0.9fr"]} cells={[r[0], r[1], r[2], <span key="c" className="text-[#7fe0a4] font-medium">{r[3]}</span>]} />
-            ))}
-            <div className="flex items-center gap-2 px-2 py-1.5 text-[9.5px]"><Chip tone="ok">NTD low risk</Chip><span className="text-white/50">cut-off 1:250</span></div>
-          </Panel>
+          </div>
         </div>
         <div className="flex items-center gap-1.5"><span className="text-[9.5px] text-white/50">Chorionicity-specific medians · IVF correction off</span><Btn primary className="ml-auto">Calculate risk</Btn><Btn>Download report</Btn></div>
       </div>
