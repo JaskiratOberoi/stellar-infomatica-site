@@ -36,23 +36,23 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
-      {/* Frame header on the orange field */}
+      {/* Frame header on the accent field */}
       <section className="bg-char">
-        <PerfEdge hole="ink" className="h-4 bg-orange" />
+        <PerfEdge hole="ink" className="h-4 bg-accent" />
         <div className="mx-auto max-w-[80rem] px-4 py-10 sm:px-6 md:py-14">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link href="/#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-edge"><ArrowLeft /> All products</Link>
             <span className="label-caps text-edge-dim">{group.scene} · {group.title}</span>
           </div>
           <div className="mt-6 flex flex-wrap items-end gap-x-8 gap-y-4">
-            <span className="font-display text-[clamp(4rem,12vw,8rem)] font-light leading-[0.8] text-orange tabular">{frameNo(p.frame)}</span>
+            <span className="font-display text-[clamp(4rem,12vw,8rem)] font-light leading-[0.8] text-accent tabular">{frameNo(p.frame)}</span>
             <div>
               <h1 className="text-[clamp(2.6rem,7vw,5rem)] font-medium text-edge">{p.name}</h1>
               <p className="label-caps mt-3 text-edge-dim">{p.short} · {p.platform}</p>
             </div>
           </div>
         </div>
-        <PerfEdge hole="ink" className="h-4 bg-orange" />
+        <PerfEdge hole="ink" className="h-4 bg-accent" />
       </section>
 
       {/* The big punched window */}
@@ -66,7 +66,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </div>
             <p className="label-caps mt-3 text-edge-dim">Illustrative screen with synthetic data</p>
           </div>
-          <PerfEdge hole="ink" className="h-3.5 bg-orange" />
+          <PerfEdge hole="ink" className="h-3.5 bg-accent" />
         </div>
       </section>
 
@@ -74,13 +74,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <section className="mx-auto mt-14 grid max-w-[80rem] gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_1fr]">
         <div>
           <p className="text-[1.25rem] leading-relaxed text-edge md:text-[1.35rem]">{p.summary}</p>
-          <p className="mt-6 border-l border-orange/60 pl-4 text-edge-dim">{p.provenance}</p>
+          <p className="mt-6 border-l border-accent/60 pl-4 text-edge-dim">{p.provenance}</p>
 
           <h2 className="mt-12 text-[2rem] text-edge">What it does</h2>
           <ul className="mt-5 divide-y divide-spool border-y border-spool">
             {p.features.map((f) => (
               <li key={f} className="flex gap-4 py-3 text-edge">
-                <GreaseTick className="mt-0.5 shrink-0 text-orange" />
+                <GreaseTick className="mt-0.5 shrink-0 text-accent" />
                 <span>{f}</span>
               </li>
             ))}
@@ -93,7 +93,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <ul className="mt-5 space-y-3">
               {committed.map((m) => (
                 <li key={m.label} className="flex items-center gap-3 border border-spool-light bg-char px-4 py-3">
-                  <GreaseTick className="shrink-0 text-orange" />
+                  <GreaseTick className="shrink-0 text-accent" />
                   <span className="text-edge">{m.label}</span>
                   <TapeBand className="ml-auto" />
                 </li>
@@ -127,9 +127,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 return (
                   <li key={slug}>
                     <Link href={`/products/${slug}`} className="group flex items-baseline gap-4 bg-ink px-4 py-3 hover:bg-char">
-                      <span className="font-display text-[0.9rem] tracking-[0.14em] text-orange">{frameNo(r.frame)}</span>
+                      <span className="font-display text-[0.9rem] tracking-[0.14em] text-accent">{frameNo(r.frame)}</span>
                       <span className="text-edge">{r.name}</span>
-                      <span className="label-caps ml-auto text-edge-dim group-hover:text-orange">{r.short}</span>
+                      <span className="label-caps ml-auto text-edge-dim group-hover:text-accent">{r.short}</span>
                     </Link>
                   </li>
                 );
@@ -137,7 +137,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </ul>
           </div>
 
-          <div className="border border-orange p-6">
+          <div className="border border-accent p-6">
             <h2 className="text-[1.8rem] text-edge">See it in a demonstration</h2>
             <p className="mt-3 text-edge-dim">Tell us about your laboratory and we will walk you through {p.name} on a staging system that mirrors production.</p>
             <PlateAnchor href={DEMO_MAILTO} className="mt-5 w-full">Request a demonstration</PlateAnchor>
@@ -150,12 +150,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         {prev ? (
           <Link href={`/products/${prev.slug}`} className="group flex items-center gap-4 bg-ink p-5 hover:bg-char">
             <span className="label-caps inline-flex items-center gap-1.5 text-edge-dim"><ArrowLeft /> {frameNo(prev.frame)}</span>
-            <span className="font-display text-[1.4rem] uppercase text-edge group-hover:text-orange">{prev.name}</span>
+            <span className="font-display text-[1.4rem] uppercase text-edge group-hover:text-accent">{prev.name}</span>
           </Link>
         ) : <span className="bg-ink p-5" />}
         {next ? (
           <Link href={`/products/${next.slug}`} className="group flex items-center justify-end gap-4 bg-ink p-5 hover:bg-char">
-            <span className="font-display text-[1.4rem] uppercase text-edge group-hover:text-orange">{next.name}</span>
+            <span className="font-display text-[1.4rem] uppercase text-edge group-hover:text-accent">{next.name}</span>
             <span className="label-caps inline-flex items-center gap-1.5 text-edge-dim">{frameNo(next.frame)} <ArrowRight /></span>
           </Link>
         ) : <span className="bg-ink p-5" />}

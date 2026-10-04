@@ -119,7 +119,7 @@ export function NexusScreen() {
                 <g key={n as string}><rect x="160" y={(y as number) - 7} width="56" height="14" rx="2" fill="#1f232b" stroke="rgba(255,255,255,0.15)" /><text x="166" y={(y as number) + 3.5} fontSize="7.5" fill="#ddd">{n}</text></g>
               ))}
               {[[10, 20], [30, 20], [30, 50], [50, 50]].map(([a, b], i) => (
-                <path key={i} d={`M54 ${a} C 110 ${a}, 110 ${b}, 160 ${b}`} stroke="#ea5a22" strokeWidth="1.2" fill="none" opacity="0.9" />
+                <path key={i} d={`M54 ${a} C 110 ${a}, 110 ${b}, 160 ${b}`} stroke="#8f6bff" strokeWidth="1.2" fill="none" opacity="0.9" />
               ))}
             </svg>
           </div>

@@ -24,13 +24,13 @@ export function PathologyGrid() {
         {live.map((p) => (
           <div key={p.id} className="flex flex-col bg-ink p-6">
             <div className="flex items-start gap-3">
-              <GreaseTick className="mt-1 shrink-0 text-orange" />
+              <GreaseTick className="mt-1 shrink-0 text-accent" />
               <h3 className="text-[1.7rem] text-edge">{p.name}</h3>
             </div>
             <p className="mt-3 flex-1 text-edge-dim">{p.description}</p>
             <ul className="mt-5 flex flex-wrap gap-2">
               {p.markers.map((m) => (
-                <li key={m} className="label-caps border border-orange/60 px-2 py-1.5 text-orange">{m}</li>
+                <li key={m} className="label-caps border border-accent/60 px-2 py-1.5 text-accent">{m}</li>
               ))}
             </ul>
           </div>

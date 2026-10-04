@@ -106,8 +106,8 @@ export function Rail() {
 
   return (
     <section aria-label="The Stellar suite on the select rail" className="relative">
-      {/* Orange field: the rail itself */}
-      <div className="field-orange relative text-ink">
+      {/* Accent field: the rail itself */}
+      <div className="field-accent relative text-ink">
         <PerfEdge hole="ink" className="h-4" />
 
         {/* Frame-count ticks with numbers */}
@@ -155,10 +155,10 @@ export function Rail() {
                   isActive ? "shadow-[0_0_0_3px_var(--color-ink),0_0_0_5px_var(--color-edge)] z-10" : "opacity-95 hover:opacity-100"
                 )}
               >
-                <PerfEdge hole="orange" className="h-3" />
+                <PerfEdge hole="accent" className="h-3" />
                 <div className="px-3 pb-2.5 pt-2">
                   <div className="mb-2 flex items-baseline justify-between">
-                    <span className="font-display text-[0.8rem] tracking-[0.14em] text-orange">{frameNo(p.frame)}</span>
+                    <span className="font-display text-[0.8rem] tracking-[0.14em] text-accent">{frameNo(p.frame)}</span>
                     <span className="label-caps text-edge-dim">{p.short}</span>
                   </div>
                   {/* Punched white window: the only place the screen lives */}
@@ -169,7 +169,7 @@ export function Rail() {
                   </div>
                   <div className="mt-2.5 font-display text-[1.25rem] uppercase leading-none tracking-[0.03em]">{p.name}</div>
                 </div>
-                <PerfEdge hole="orange" className="h-3" />
+                <PerfEdge hole="accent" className="h-3" />
               </div>
             );
           })}
@@ -185,9 +185,9 @@ export function Rail() {
               Selected · <span className="text-edge">{current.name}</span> · {current.platform}
             </p>
             <div className="flex items-center gap-3">
-              <button type="button" onClick={() => goTo(Math.max(active - 1, 0))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === 0} aria-label="Previous frame"><ArrowLeft /> Previous</button>
-              <span className="label-caps tabular text-orange">{frameNo(active + 1)} / {frameNo(PRODUCTS.length)}</span>
-              <button type="button" onClick={() => goTo(Math.min(active + 1, PRODUCTS.length - 1))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === PRODUCTS.length - 1} aria-label="Next frame">Next <ArrowRight /></button>
+              <button type="button" onClick={() => goTo(Math.max(active - 1, 0))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-accent disabled:opacity-40" disabled={active === 0} aria-label="Previous frame"><ArrowLeft /> Previous</button>
+              <span className="label-caps tabular text-accent">{frameNo(active + 1)} / {frameNo(PRODUCTS.length)}</span>
+              <button type="button" onClick={() => goTo(Math.min(active + 1, PRODUCTS.length - 1))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-accent disabled:opacity-40" disabled={active === PRODUCTS.length - 1} aria-label="Next frame">Next <ArrowRight /></button>
             </div>
           </div>
 
@@ -207,7 +207,7 @@ export function Rail() {
             ))}
             <div className="col-span-2 flex flex-col items-start justify-end gap-3 sm:col-span-4 lg:col-span-1 lg:items-center">
               <PlateLink href={`/products/${current.slug}`} tone="secondary" className="w-full">View {current.name}</PlateLink>
-              <Link href="#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange">All products <ArrowDown /></Link>
+              <Link href="#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-accent">All products <ArrowDown /></Link>
             </div>
           </div>
         </div>

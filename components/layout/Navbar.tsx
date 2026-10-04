@@ -31,7 +31,7 @@ export function Navbar() {
           {links.map((l) => {
             const current = l.href === path || (l.href.startsWith("/#") && path === "/" && false);
             return (
-              <Link key={l.href} href={l.href} className={cn("label-caps border-b border-transparent pb-1 text-edge-dim transition-colors hover:text-edge", current && "border-orange text-edge")}>
+              <Link key={l.href} href={l.href} className={cn("label-caps border-b border-transparent pb-1 text-edge-dim transition-colors hover:text-edge", current && "border-accent text-edge")}>
                 {l.label}
               </Link>
             );
@@ -45,7 +45,7 @@ export function Navbar() {
           </svg>
         </button>
       </div>
-      <PerfEdge hole="ink" className="h-2.5 bg-orange" />
+      <PerfEdge hole="ink" className="h-2.5 bg-accent" />
       {open && (
         <div id="mobile-nav" className="border-b border-spool bg-ink md:hidden">
           <nav className="mx-auto flex max-w-[80rem] flex-col px-4 py-3 sm:px-6" aria-label="Primary, mobile">

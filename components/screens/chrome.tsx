@@ -8,13 +8,13 @@ export function Screen({ title, children, className, nav }: { title: string; chi
   return (
     <div className={cn("flex h-full w-full flex-col bg-[#0f1115] text-[#e8e8e8] font-body text-[11px] leading-[1.35] antialiased select-none", className)} aria-label={`${title} screen, illustrative`}>
       <div className="flex items-center gap-2 border-b border-white/10 bg-[#13161c] px-2.5 py-1.5">
-        <span className="h-2 w-2 rounded-full bg-[#ea5a22]" />
+        <span className="h-2 w-2 rounded-full bg-[#8f6bff]" />
         <span className="font-display uppercase tracking-[0.12em] text-[10px] text-white/85">{title}</span>
-        <span className="ml-1 rounded-[2px] border border-[#ea5a22]/70 px-1 py-px font-display text-[8px] uppercase tracking-[0.14em] text-[#f3a07a]">Illustrative data</span>
+        <span className="ml-1 rounded-[2px] border border-[#8f6bff]/70 px-1 py-px font-display text-[8px] uppercase tracking-[0.14em] text-[#b9a6ff]">Illustrative data</span>
         {nav && (
           <span className="ml-auto hidden gap-2.5 text-[9.5px] text-white/45 sm:flex">
             {nav.map((n, i) => (
-              <span key={n} className={cn(i === 0 && "text-white/85 border-b border-[#ea5a22] pb-px")}>{n}</span>
+              <span key={n} className={cn(i === 0 && "text-white/85 border-b border-[#8f6bff] pb-px")}>{n}</span>
             ))}
           </span>
         )}
@@ -61,7 +61,7 @@ export function Row({ cells, head, className, widths }: { cells: ReactNode[]; he
 
 export function Btn({ children, primary, className }: { children: ReactNode; primary?: boolean; className?: string }) {
   return (
-    <span className={cn("inline-flex items-center rounded-[2px] px-2 py-[3px] text-[10px] font-medium", primary ? "bg-[#ea5a22] text-black" : "border border-white/20 text-white/80", className)}>
+    <span className={cn("inline-flex items-center rounded-[2px] px-2 py-[3px] text-[10px] font-medium", primary ? "bg-[#8f6bff] text-black" : "border border-white/20 text-white/80", className)}>
       {children}
     </span>
   );
@@ -76,7 +76,7 @@ export function Field({ label, value, className }: { label: string; value: React
   );
 }
 
-export function Bars({ values, max, color = "#ea5a22", className, labels }: { values: number[]; max?: number; color?: string; className?: string; labels?: string[] }) {
+export function Bars({ values, max, color = "#8f6bff", className, labels }: { values: number[]; max?: number; color?: string; className?: string; labels?: string[] }) {
   const m = max ?? Math.max(...values);
   return (
     <div className={cn("flex items-end gap-[3px] h-full", className)}>

@@ -25,7 +25,7 @@ export default function Home() {
         <div className="grid items-end gap-x-12 gap-y-6 lg:grid-cols-[1.2fr_1fr]">
           <h1 className="text-[clamp(2.8rem,6.6vw,4.6rem)] font-medium text-edge">
             Every step of the laboratory.<br />
-            <span className="text-orange">One integrated suite.</span>
+            <span className="text-accent">One integrated suite.</span>
           </h1>
           <div>
             <p className="max-w-[46ch] text-[1.0625rem] leading-snug text-edge-dim md:text-[1.125rem]">
@@ -33,7 +33,7 @@ export default function Home() {
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
               <PlateAnchor href={DEMO_MAILTO} size="lg">Request a demonstration</PlateAnchor>
-              <Link href="#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange">
+              <Link href="#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-accent">
                 All products <ArrowDown />
               </Link>
             </div>
@@ -67,7 +67,7 @@ export default function Home() {
         <ul className="mt-10 grid gap-px border border-spool bg-spool sm:grid-cols-2">
           {governance.map(([h, t]) => (
             <li key={h} className="flex gap-4 bg-ink p-7">
-              <GreaseTick className="mt-1 shrink-0 text-orange" />
+              <GreaseTick className="mt-1 shrink-0 text-accent" />
               <div>
                 <h3 className="text-[1.7rem] text-edge">{h}</h3>
                 <p className="mt-2 text-edge-dim">{t}</p>
@@ -76,7 +76,7 @@ export default function Home() {
           ))}
         </ul>
         <p className="mt-6 max-w-[80ch] text-[0.95rem] text-edge-dim">
-          These are product capabilities, not certifications. Accreditation and regulatory compliance remain the laboratory’s responsibility. Screening engines are decision support for qualified professionals; see the <Link href="/disclaimer" className="text-edge underline hover:text-orange">clinical disclaimer</Link>.
+          These are product capabilities, not certifications. Accreditation and regulatory compliance remain the laboratory’s responsibility. Screening engines are decision support for qualified professionals; see the <Link href="/disclaimer" className="text-edge underline hover:text-accent">clinical disclaimer</Link>.
         </p>
       </section>
 
@@ -103,10 +103,10 @@ export default function Home() {
           {planned.map((d) => (
             <div key={d.product.slug + d.label} className="flex flex-col items-center">
               <Pin />
-              <Link href={`/products/${d.product.slug}`} className="-mt-1 w-full border border-spool-light bg-char hover:border-orange">
+              <Link href={`/products/${d.product.slug}`} className="-mt-1 w-full border border-spool-light bg-char hover:border-accent">
                 <PerfEdge hole="edge" className="h-2.5 opacity-40" />
                 <div className="px-3 py-2.5">
-                  <div className="label-caps text-orange">{d.product.name}</div>
+                  <div className="label-caps text-accent">{d.product.name}</div>
                   <p className="mt-1.5 text-[0.9rem] leading-snug text-edge">{d.label}</p>
                   <p className="label-caps mt-2 text-edge-dim">Planned</p>
                 </div>
@@ -119,7 +119,7 @@ export default function Home() {
 
       {/* ── Contact close ────────────────────────────────────────── */}
       <section id="contact" className="mt-28 scroll-mt-24 bg-char">
-        <PerfEdge hole="ink" className="h-4 bg-orange" />
+        <PerfEdge hole="ink" className="h-4 bg-accent" />
         <div className="mx-auto grid max-w-[80rem] gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1.3fr_1fr] md:py-24">
           <div>
             <h2 className="text-[clamp(2.6rem,6vw,4.4rem)] font-medium text-edge">Request a demonstration.</h2>
@@ -129,12 +129,12 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-start justify-end gap-5">
             <PlateAnchor href={DEMO_MAILTO} size="lg" className="w-full md:w-auto">Request a demonstration</PlateAnchor>
-            <a href="mailto:support@stellarinfomatica.com" className="font-display text-[1.4rem] uppercase tracking-[0.04em] text-orange hover:text-tape">
+            <a href="mailto:support@stellarinfomatica.com" className="font-display text-[1.4rem] uppercase tracking-[0.04em] text-accent hover:text-tape">
               support@stellarinfomatica.com
             </a>
           </div>
         </div>
-        <PerfEdge hole="ink" className="h-4 bg-orange" />
+        <PerfEdge hole="ink" className="h-4 bg-accent" />
       </section>
     </>
   );
@@ -147,8 +147,8 @@ function ProductFrame({ slug, flip }: { slug: string; flip?: boolean }) {
   return (
     <article className="relative bg-char" aria-labelledby={`frame-h-${p.slug}`}>
       <div className="relative">
-        <PerfEdge hole="ink" className="h-5 bg-orange" />
-        <span className="absolute left-3 top-0 flex h-5 items-center bg-orange px-2 font-display text-[0.95rem] font-medium tracking-[0.16em] text-ink">{frameNo(p.frame)}</span>
+        <PerfEdge hole="ink" className="h-5 bg-accent" />
+        <span className="absolute left-3 top-0 flex h-5 items-center bg-accent px-2 font-display text-[0.95rem] font-medium tracking-[0.16em] text-ink">{frameNo(p.frame)}</span>
       </div>
       <div className={cn("grid gap-6 p-4 md:gap-8 md:p-7 lg:grid-cols-[1.15fr_1fr]", flip && "lg:[&>*:first-child]:order-2")}>
         <div className="self-start bg-punch p-2 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.25)]">
@@ -166,12 +166,12 @@ function ProductFrame({ slug, flip }: { slug: string; flip?: boolean }) {
             <ul className="mt-5 space-y-2">
               {p.features.slice(0, 4).map((f) => (
                 <li key={f} className="flex gap-3 text-[0.95rem] leading-snug text-edge">
-                  <GreaseTick className="mt-0.5 shrink-0 text-orange" />
+                  <GreaseTick className="mt-0.5 shrink-0 text-accent" />
                   <span>{f}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-5 border-l border-orange/60 pl-4 text-[0.9rem] text-edge-dim">{p.provenance}</p>
+            <p className="mt-5 border-l border-accent/60 pl-4 text-[0.9rem] text-edge-dim">{p.provenance}</p>
             <div className="mt-auto pt-6">
               <PlateLink href={`/products/${p.slug}`} tone="secondary">View {p.name}</PlateLink>
             </div>
@@ -179,7 +179,7 @@ function ProductFrame({ slug, flip }: { slug: string; flip?: boolean }) {
           <PerfEdge hole="edge" className="h-2.5 opacity-40" />
         </div>
       </div>
-      <PerfEdge hole="ink" className="h-5 bg-orange" />
+      <PerfEdge hole="ink" className="h-5 bg-accent" />
     </article>
   );
 }

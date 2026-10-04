@@ -5,7 +5,7 @@
 
 /* ───────────────────────────────────────────────────────────
    Stellar Infomatica — Cutting Bench world
-   Ink black field, grain orange rail, punched white windows.
+   Ink black field, grain accent rail, punched white windows.
    One condensed grotesk. State is a mark, never a hue.
    ─────────────────────────────────────────────────────────── */
 
@@ -14,10 +14,10 @@
   --color-char: #1a1a1a;
   --color-spool: #2e2e2e;
   --color-spool-light: #3d3d3d;
-  --color-orange: #ea5a22;
-  --color-orange-deep: #d9480f;
-  --color-orange-ink: #3a1507;
-  --color-tape: #ee7d4a;
+  --color-accent: #8f6bff;
+  --color-accent-deep: #6d4fd6;
+  --color-accent-ink: #1d1440;
+  --color-tape: #a98cff;
   --color-punch: #ffffff;
   --color-edge: #f2f2f2;
   --color-edge-dim: #b8b8b8;
@@ -29,18 +29,16 @@
   --color-card-foreground: var(--color-edge);
   --color-popover: var(--color-char);
   --color-popover-foreground: var(--color-edge);
-  --color-primary: var(--color-orange);
+  --color-primary: var(--color-accent);
   --color-primary-foreground: var(--color-ink);
   --color-secondary: var(--color-spool);
   --color-secondary-foreground: var(--color-edge);
   --color-muted: var(--color-spool);
   --color-muted-foreground: var(--color-edge-dim);
-  --color-accent: var(--color-spool);
-  --color-accent-foreground: var(--color-edge);
   --color-destructive: #ff3b1f;
   --color-border: var(--color-spool);
   --color-input: var(--color-spool);
-  --color-ring: var(--color-orange);
+  --color-ring: var(--color-accent);
 
   --font-display: var(--font-barlow-condensed), "Barlow Condensed", "Arial Narrow", sans-serif;
   --font-body: var(--font-barlow), "Barlow", system-ui, sans-serif;
@@ -59,7 +57,7 @@
   --background: #0a0a0a;
   --foreground: #f2f2f2;
   --border: #2e2e2e;
-  --ring: #ea5a22;
+  --ring: #8f6bff;
   --radius: 2px;
   color-scheme: dark;
 }
@@ -89,11 +87,11 @@
     text-wrap: balance;
   }
   ::selection {
-    background: var(--color-orange);
+    background: var(--color-accent);
     color: var(--color-ink);
   }
   :focus-visible {
-    outline: 2px solid var(--color-orange);
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
   }
   a {
@@ -101,15 +99,15 @@
     text-decoration-thickness: 1px;
   }
   input, textarea {
-    caret-color: var(--color-orange);
+    caret-color: var(--color-accent);
   }
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--color-orange) var(--color-char);
+    scrollbar-color: var(--color-accent) var(--color-char);
   }
   ::-webkit-scrollbar { height: 10px; width: 10px; }
   ::-webkit-scrollbar-track { background: var(--color-char); }
-  ::-webkit-scrollbar-thumb { background: var(--color-orange); border: 2px solid var(--color-char); }
+  ::-webkit-scrollbar-thumb { background: var(--color-accent); border: 2px solid var(--color-char); }
   code, kbd, .tabular { font-variant-numeric: tabular-nums; }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
@@ -143,9 +141,9 @@
   .grain::after { animation: none; }
 }
 
-/* Orange grain surface: coarser, denser noise baked into the orange field. */
-@utility field-orange {
-  background-color: var(--color-orange);
+/* Accent grain surface: coarser, denser noise baked into the accent field. */
+@utility field-accent {
+  background-color: var(--color-accent);
   background-image:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
   background-size: 160px 160px;
@@ -165,7 +163,7 @@
   background-repeat: repeat-y;
   background-position: center;
 }
-/* Square sprocket variant used on the orange rail (reads truer to 35mm). */
+/* Square sprocket variant used on the accent rail (reads truer to 35mm). */
 @utility sprocket-x {
   background-image: linear-gradient(var(--perf-hole, var(--color-ink)), var(--perf-hole, var(--color-ink)));
   background-size: 0.6rem 0.5rem;
@@ -205,7 +203,7 @@
 
 /* Hairline rules in the world's weight */
 @utility rule-edge { border-color: color-mix(in oklab, var(--color-edge) 22%, transparent); }
-@utility rule-orange { border-color: var(--color-orange); }
+@utility rule-accent { border-color: var(--color-accent); }
 
 /* Labels: caps, tracked, condensed */
 @utility label-caps {

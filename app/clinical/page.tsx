@@ -22,7 +22,7 @@ export default function ClinicalPage() {
   return (
     <>
       <section className="bg-char">
-        <PerfEdge hole="ink" className="h-4 bg-orange" />
+        <PerfEdge hole="ink" className="h-4 bg-accent" />
         <div className="mx-auto max-w-[80rem] px-4 py-12 sm:px-6 md:py-20">
           <Link href="/products/biosentry" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-edge"><ArrowLeft /> Stellar BioSentry</Link>
           <h1 className="mt-5 max-w-[14ch] text-[clamp(3rem,8vw,6rem)] font-medium text-edge">The science of probability.</h1>
@@ -30,7 +30,7 @@ export default function ClinicalPage() {
             The pathologies, markers and corrections behind the BioSentry engine, with the method shown. BioSentry is decision support for qualified professionals; the reporting clinician signs the result.
           </p>
         </div>
-        <PerfEdge hole="ink" className="h-4 bg-orange" />
+        <PerfEdge hole="ink" className="h-4 bg-accent" />
       </section>
 
       <section className="mx-auto mt-20 max-w-[80rem] px-4 sm:px-6">
@@ -55,7 +55,7 @@ export default function ClinicalPage() {
         </ul>
         <div className="mt-10 flex flex-wrap gap-4">
           <PlateLink href="/products/biosentry" tone="secondary">View Stellar BioSentry</PlateLink>
-          <Link href="/disclaimer" className="label-caps inline-flex items-center gap-1.5 self-center text-edge-dim hover:text-orange">Read the clinical disclaimer <ArrowRight /></Link>
+          <Link href="/disclaimer" className="label-caps inline-flex items-center gap-1.5 self-center text-edge-dim hover:text-accent">Read the clinical disclaimer <ArrowRight /></Link>
         </div>
       </section>
     </>
