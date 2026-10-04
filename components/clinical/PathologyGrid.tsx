@@ -48,7 +48,7 @@ export function PathologyGrid() {
                   <div className="px-4 py-3">
                     <h3 className="text-[1.4rem] text-edge">{p.name}</h3>
                     <p className="mt-1.5 text-[0.9rem] text-edge-dim">{p.description}</p>
-                    <p className="label-caps mt-3 text-edge-dim">deferred · {p.markers.join(", ")}</p>
+                    <p className="label-caps mt-3 text-edge-dim">Planned · {p.markers.join(", ")}</p>
                   </div>
                   <PerfEdge hole="edge" className="h-2.5 opacity-40" />
                 </div>

@@ -47,21 +47,21 @@ export function MoMExplainer() {
         <div className="relative h-[320px] bg-[#0f1115] text-[#e8e8e8]" aria-hidden>
           <div className="absolute left-3 top-3 bottom-3 flex flex-col justify-between font-display text-[0.75rem] tracking-[0.1em] text-white/45">
             {[3.0, 2.0, 1.0, 0.5, 0.33].map((v) => (
-              <span key={v} className={v === 1 ? "text-[#ff5a1f]" : ""} style={{ position: "absolute", top: `calc(${pos(v)}% - 0.5em)` }}>{v === 0.33 ? "⅓" : v.toFixed(1)}</span>
+              <span key={v} className={v === 1 ? "text-[#ea5a22]" : ""} style={{ position: "absolute", top: `calc(${pos(v)}% - 0.5em)` }}>{v === 0.33 ? "⅓" : v.toFixed(1)}</span>
             ))}
           </div>
           <div className="absolute inset-y-3 left-14 right-4">
             {[3.0, 2.0, 0.5, 0.33].map((v) => (
               <div key={v} className="absolute left-0 right-0 h-px bg-white/10" style={{ top: `${pos(v)}%` }} />
             ))}
-            <div className="absolute left-0 right-0 border-t-2 border-dashed border-[#ff5a1f]/80" style={{ top: "50%" }}>
-              <span className="absolute -top-5 right-0 font-display text-[0.75rem] tracking-[0.1em] text-[#ff5a1f]">Population median · 1.0 MoM</span>
+            <div className="absolute left-0 right-0 border-t-2 border-dashed border-[#ea5a22]/80" style={{ top: "50%" }}>
+              <span className="absolute -top-5 right-0 font-display text-[0.75rem] tracking-[0.1em] text-[#ea5a22]">Population median · 1.0 MoM</span>
             </div>
             {mom !== 1 && (
               <div className="absolute left-1/2 w-0.5 -translate-x-1/2 bg-white/30" style={{ top: `${Math.min(50, top)}%`, height: `${Math.abs(50 - top)}%` }} />
             )}
             <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 transition-[top] duration-200 ease-out" style={{ top: `${top}%` }}>
-              <div className="h-5 w-5 rounded-full border-2 border-white bg-[#ff5a1f] shadow-[0_0_0_4px_rgba(255,90,31,0.25)]" />
+              <div className="h-5 w-5 rounded-full border-2 border-white bg-[#ea5a22] shadow-[0_2px_6px_rgba(0,0,0,0.5)]" />
             </div>
           </div>
           <div className="absolute bottom-3 left-14 font-display text-[0.75rem] tracking-[0.1em] text-white/45">Log scale · same distance for ×3 and ÷3</div>

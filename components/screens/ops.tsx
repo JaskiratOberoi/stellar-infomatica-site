@@ -54,7 +54,7 @@ export function SmsScreen() {
         <Panel>
           <Row head cells={["Item", "Instrument", "Opening", "Receipts", "Wastage", "Closing"]} widths={["1.3fr", "0.8fr", "0.6fr", "0.6fr", "0.6fr", "0.7fr"]} />
           {items.map((r) => (
-            <Row key={r[0]} widths={["1.3fr", "0.8fr", "0.6fr", "0.6fr", "0.6fr", "0.7fr"]} cells={[r[0], <span key="i" className="text-white/55">{r[1]}</span>, r[2], r[3], r[4], <span key="c" className="rounded-[2px] border border-[#ff5a1f]/60 bg-black/30 px-1 py-px text-right block">{r[5]}</span>]} />
+            <Row key={r[0]} widths={["1.3fr", "0.8fr", "0.6fr", "0.6fr", "0.6fr", "0.7fr"]} cells={[r[0], <span key="i" className="text-white/55">{r[1]}</span>, r[2], r[3], r[4], <span key="c" className="rounded-[2px] border border-[#ea5a22]/60 bg-black/30 px-1 py-px text-right block">{r[5]}</span>]} />
           ))}
           <div className="px-2 py-1.5 text-[9.5px] text-white/50">Consumption is derived on the server and shown to super admin only.</div>
         </Panel>
@@ -95,7 +95,7 @@ export function ApexScreen() {
           <div className="p-2 space-y-1.5">
             <div className="flex items-center gap-2"><span className="h-7 w-7 rounded-full bg-white/15" /><div><div className="text-[11px]">R. Verma</div><div className="text-[9px] text-white/50">Lab technician · Entity N · BU-N04</div></div><Chip tone="ok" className="ml-auto">active</Chip></div>
             <div className="grid grid-cols-2 gap-1.5"><Field label="Employee code" value="N-00418" /><Field label="Joined" value="02 Jun 2025" /></div>
-            <div><div className="flex justify-between text-[9px] text-white/50"><span>Payroll readiness</span><span>86%</span></div><div className="mt-1 h-1.5 rounded-full bg-white/10"><div className="h-full w-[86%] rounded-full bg-[#ff5a1f]" /></div></div>
+            <div><div className="flex justify-between text-[9px] text-white/50"><span>Payroll readiness</span><span>86%</span></div><div className="mt-1 h-1.5 rounded-full bg-white/10"><div className="h-full w-[86%] rounded-full bg-[#ea5a22]" /></div></div>
           </div>
         </Panel>
         <Panel title="Statutory · masked by default">
@@ -121,11 +121,11 @@ export function MaximusScreen() {
             <svg viewBox="0 0 120 120" className="h-full w-full">
               {/* stylised state blocks, not a true map */}
               {[[30, 10, 30, 26, 0.35], [60, 12, 28, 22, 0.75], [22, 36, 36, 30, 0.55], [58, 34, 34, 30, 0.9], [40, 66, 30, 32, 0.25], [70, 64, 26, 28, 0.45]].map(([x, y, w, h, o], i) => (
-                <rect key={i} x={x} y={y} width={w} height={h} rx="2" fill="#ff5a1f" opacity={o} stroke="#0f1115" strokeWidth="1.5" />
+                <rect key={i} x={x} y={y} width={w} height={h} rx="2" fill="#ea5a22" opacity={o} stroke="#0f1115" strokeWidth="1.5" />
               ))}
               <text x="64" y="52" fontSize="7" fill="#fff" fontWeight="600">Unit D</text>
             </svg>
-            <div className="absolute bottom-1.5 left-1.5 flex gap-1 text-[8.5px]"><span className="rounded-[2px] bg-[#ff5a1f] px-1 text-black">HR cost</span><span className="rounded-[2px] border border-white/20 px-1 text-white/70">Revenue</span></div>
+            <div className="absolute bottom-1.5 left-1.5 flex gap-1 text-[8.5px]"><span className="rounded-[2px] bg-[#ea5a22] px-1 text-black">HR cost</span><span className="rounded-[2px] border border-white/20 px-1 text-white/70">Revenue</span></div>
           </div>
         </Panel>
         <Panel title="Cost as share of revenue · by unit">

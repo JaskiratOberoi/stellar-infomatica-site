@@ -49,7 +49,7 @@ export function BioSentryScreen() {
                     <line x1="14" x2="112" y1="60" y2="60" stroke="rgba(255,255,255,0.2)" strokeWidth="0.4" />
                     <text x="0" y="61.5" fontSize="4" fill="rgba(255,255,255,0.4)">1:5k</text>
                     <text x="0" y="6" fontSize="4" fill="rgba(255,255,255,0.4)">1:5</text>
-                    <path d={d} fill="none" stroke="#ff5a1f" strokeWidth="1.1" />
+                    <path d={d} fill="none" stroke="#ea5a22" strokeWidth="1.1" />
                     <circle cx="52" cy="54" r="1.8" fill="#7fe0a4" />
                     <text x="55" y="51" fontSize="4" fill="#7fe0a4">29 y · this case</text>
                     <text x="29" y="65.5" fontSize="3.6" fill="rgba(255,255,255,0.35)">20</text>

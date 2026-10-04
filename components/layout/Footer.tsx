@@ -18,7 +18,7 @@ export function Footer() {
           <div>
             <Wordmark />
             <p className="mt-5 max-w-[42ch] text-edge-dim">
-              Software for diagnostic laboratories, built and run inside a working lab network in India. Twelve products on one rail.
+              Software for diagnostic laboratories, developed and operated inside a working laboratory network in India.
             </p>
             <a href="mailto:support@stellarinfomatica.com" className="mt-6 inline-block font-display text-[1.4rem] uppercase tracking-[0.04em] text-orange hover:text-tape">
               support@stellarinfomatica.com
@@ -28,7 +28,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
             {groups.map((g) => (
               <div key={g}>
-                <div className="label-caps mb-4 text-orange">{GROUPS[g].scene}</div>
+                <div className="label-caps mb-4 text-orange">{GROUPS[g].scene} · {GROUPS[g].title}</div>
                 <ul className="space-y-2.5">
                   {byGroup(g).map((p) => (
                     <li key={p.slug}>
@@ -67,7 +67,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-spool pt-6">
           <p className="label-caps text-edge-dim">© {new Date().getFullYear()} Stellar Infomatica · {PRODUCTS.length} products</p>
-          <p className="label-caps text-edge-dim">Screens on this site are illustrative, with synthetic data</p>
+          <p className="label-caps text-edge-dim">Screens on this site are illustrative and use synthetic data</p>
         </div>
       </div>
     </footer>

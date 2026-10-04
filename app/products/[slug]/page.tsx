@@ -37,22 +37,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   return (
     <>
       {/* Frame header on the orange field */}
-      <section className="field-orange">
-        <PerfEdge hole="ink" className="h-4" />
+      <section className="bg-char">
+        <PerfEdge hole="ink" className="h-4 bg-orange" />
         <div className="mx-auto max-w-[80rem] px-4 py-10 sm:px-6 md:py-14">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <Link href="/#products" className="label-caps inline-flex items-center gap-1.5 text-ink/80 hover:text-ink"><ArrowLeft /> All frames</Link>
-            <span className="label-caps text-ink/70">{group.scene} · {group.title}</span>
+            <Link href="/#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-edge"><ArrowLeft /> All products</Link>
+            <span className="label-caps text-edge-dim">{group.scene} · {group.title}</span>
           </div>
           <div className="mt-6 flex flex-wrap items-end gap-x-8 gap-y-4">
-            <span className="font-display text-[clamp(4rem,12vw,8rem)] font-light leading-[0.8] text-ink tabular">{frameNo(p.frame)}</span>
+            <span className="font-display text-[clamp(4rem,12vw,8rem)] font-light leading-[0.8] text-orange tabular">{frameNo(p.frame)}</span>
             <div>
-              <h1 className="text-[clamp(2.6rem,7vw,5rem)] font-semibold text-ink">{p.name}</h1>
-              <p className="label-caps mt-3 text-ink/80">{p.short} · {p.platform}</p>
+              <h1 className="text-[clamp(2.6rem,7vw,5rem)] font-medium text-edge">{p.name}</h1>
+              <p className="label-caps mt-3 text-edge-dim">{p.short} · {p.platform}</p>
             </div>
           </div>
         </div>
-        <PerfEdge hole="ink" className="h-4" />
+        <PerfEdge hole="ink" className="h-4 bg-orange" />
       </section>
 
       {/* The big punched window */}
@@ -89,7 +89,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         <aside className="space-y-10">
           <div>
-            <h2 className="text-[2rem] text-edge">State of the frame</h2>
+            <h2 className="text-[2rem] text-edge">Status</h2>
             <ul className="mt-5 space-y-3">
               {committed.map((m) => (
                 <li key={m.label} className="flex items-center gap-3 border border-spool-light bg-char px-4 py-3">
@@ -109,7 +109,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       <div className="-mt-1 w-full border border-spool-light bg-char">
                         <PerfEdge hole="edge" className="h-2.5 opacity-40" />
                         <p className="px-3 py-2.5 text-[0.9rem] leading-snug text-edge">{m.label}</p>
-                        <p className="label-caps px-3 pb-2.5 text-edge-dim">deferred</p>
+                        <p className="label-caps px-3 pb-2.5 text-edge-dim">Planned</p>
                         <PerfEdge hole="edge" className="h-2.5 opacity-40" />
                       </div>
                     </li>
@@ -120,7 +120,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
 
           <div>
-            <h2 className="text-[2rem] text-edge">Runs with</h2>
+            <h2 className="text-[2rem] text-edge">Works with</h2>
             <ul className="mt-5 grid gap-px border border-spool bg-spool">
               {p.related.map((slug) => {
                 const r = bySlug(slug)!;
@@ -138,15 +138,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
 
           <div className="border border-orange p-6">
-            <h2 className="text-[1.8rem] text-edge">See this frame on a demo</h2>
-            <p className="mt-3 text-edge-dim">Write to us with your lab’s name and we will walk you through {p.name} on a production-shaped staging system.</p>
-            <PlateAnchor href={DEMO_MAILTO} className="mt-5 w-full">Request a demo</PlateAnchor>
+            <h2 className="text-[1.8rem] text-edge">See it in a demonstration</h2>
+            <p className="mt-3 text-edge-dim">Tell us about your laboratory and we will walk you through {p.name} on a staging system that mirrors production.</p>
+            <PlateAnchor href={DEMO_MAILTO} className="mt-5 w-full">Request a demonstration</PlateAnchor>
           </div>
         </aside>
       </section>
 
       {/* Prev / next on the rail */}
-      <nav className="mx-auto mt-20 grid max-w-[80rem] gap-px border border-spool bg-spool px-0 sm:grid-cols-2" aria-label="Neighbouring frames">
+      <nav className="mx-auto mt-20 grid max-w-[80rem] gap-px border border-spool bg-spool px-0 sm:grid-cols-2" aria-label="Neighbouring products">
         {prev ? (
           <Link href={`/products/${prev.slug}`} className="group flex items-center gap-4 bg-ink p-5 hover:bg-char">
             <span className="label-caps inline-flex items-center gap-1.5 text-edge-dim"><ArrowLeft /> {frameNo(prev.frame)}</span>
@@ -161,7 +161,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         ) : <span className="bg-ink p-5" />}
       </nav>
       <div className="mx-auto mt-6 max-w-[80rem] px-4 sm:px-6">
-        <PlateLink href="/#products" tone="secondary">Back to the rail</PlateLink>
+        <PlateLink href="/#products" tone="secondary">All products</PlateLink>
       </div>
     </>
   );

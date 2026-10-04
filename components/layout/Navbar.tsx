@@ -7,13 +7,13 @@ import { Wordmark, PlateAnchor, PerfEdge } from "@/components/bench/primitives";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/#products", label: "The suite" },
-  { href: "/#bench", label: "The bench" },
+  { href: "/#products", label: "Products" },
+  { href: "/#why", label: "Why Stellar" },
   { href: "/clinical", label: "Clinical logic" },
   { href: "/#contact", label: "Contact" },
 ];
 
-export const DEMO_MAILTO = "mailto:support@stellarinfomatica.com?subject=Demo%20request%20%E2%80%94%20Stellar%20suite";
+export const DEMO_MAILTO = "mailto:support@stellarinfomatica.com?subject=Demonstration%20request%20%E2%80%94%20Stellar%20Infomatica";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -36,7 +36,7 @@ export function Navbar() {
               </Link>
             );
           })}
-          <PlateAnchor href={DEMO_MAILTO} size="md" className="ml-2">Request a demo</PlateAnchor>
+          <PlateAnchor href={DEMO_MAILTO} size="md" className="ml-2">Request a demonstration</PlateAnchor>
         </nav>
 
         <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls="mobile-nav" className="ml-auto flex h-10 w-10 items-center justify-center border border-spool-light text-edge md:hidden" aria-label={open ? "Close menu" : "Open menu"}>
@@ -54,7 +54,7 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <PlateAnchor href={DEMO_MAILTO} className="mt-4 w-full">Request a demo</PlateAnchor>
+            <PlateAnchor href={DEMO_MAILTO} className="mt-4 w-full">Request a demonstration</PlateAnchor>
           </nav>
         </div>
       )}

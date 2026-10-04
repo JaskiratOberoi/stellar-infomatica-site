@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <!-- Stellar Infomatica mark: a punched 35mm frame with a star in the window. Authored by hand, 2026-10-04. -->
   <rect width="64" height="64" rx="6" fill="#0a0a0a"/>
-  <rect x="7" y="12" width="50" height="40" rx="2" fill="none" stroke="#ff5a1f" stroke-width="3"/>
-  <g fill="#ff5a1f">
+  <rect x="7" y="12" width="50" height="40" rx="2" fill="none" stroke="#ea5a22" stroke-width="3"/>
+  <g fill="#ea5a22">
     <rect x="11" y="17" width="4" height="3.4"/><rect x="11" y="25" width="4" height="3.4"/><rect x="11" y="33" width="4" height="3.4"/><rect x="11" y="41" width="4" height="3.4"/>
     <rect x="49" y="17" width="4" height="3.4"/><rect x="49" y="25" width="4" height="3.4"/><rect x="49" y="33" width="4" height="3.4"/><rect x="49" y="41" width="4" height="3.4"/>
     <path d="M32 20.5l3.2 8.1 8.7.5-6.8 5.5 2.2 8.4L32 38.3l-7.3 4.7 2.2-8.4-6.8-5.5 8.7-.5L32 20.5z"/>

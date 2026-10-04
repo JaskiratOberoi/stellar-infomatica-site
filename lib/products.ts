@@ -18,24 +18,24 @@ export interface Product {
 
 export const GROUPS: Record<ProductGroup, { scene: string; title: string; line: string }> = {
   "lab-floor": {
-    scene: "Scene 01",
-    title: "The lab floor",
-    line: "From the analyzer port to the signed report: the pipeline every sample rides.",
+    scene: "01",
+    title: "Laboratory operations",
+    line: "From the analyzer interface to the authenticated report: the systems every sample passes through.",
   },
   clinical: {
-    scene: "Scene 02",
-    title: "Clinical engines",
-    line: "Screening maths for qualified professionals, with the working shown.",
+    scene: "02",
+    title: "Clinical screening",
+    line: "Risk calculation and interpretation engines for qualified professionals, with the method shown.",
   },
   stores: {
-    scene: "Scene 03",
-    title: "Stores and stock",
-    line: "Every tube, letterhead and reagent counted from the ledger, never guessed.",
+    scene: "03",
+    title: "Inventory and assets",
+    line: "Reagents, consumables and equipment accounted for from a ledger, not an estimate.",
   },
   people: {
-    scene: "Scene 04",
-    title: "People and money",
-    line: "Who works where, what it costs, and what each unit bills, by unit only.",
+    scene: "04",
+    title: "People and finance",
+    line: "Workforce records and unit-level cost and revenue reporting, never by individual.",
   },
 };
 

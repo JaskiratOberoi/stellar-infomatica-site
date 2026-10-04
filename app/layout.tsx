@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     template: "%s | Stellar Infomatica",
   },
   description:
-    "Twelve products for diagnostic laboratories on one rail: analyzer interfacing, the laboratory command centre, prenatal and allergy screening engines, stock and materials, people and money. Built inside a working lab network in India.",
+    "An integrated suite of twelve products for diagnostic laboratories: analyzer interfacing, the laboratory information system, prenatal and allergy screening engines, inventory and assets, people and finance. Developed inside a working laboratory network in India.",
   keywords: ["laboratory information system", "LIS", "analyzer interfacing", "HL7", "ASTM", "prenatal screening", "dual marker", "quad marker", "allergy screening", "specific IgE", "lab inventory", "diagnostic lab software India"],
   openGraph: {
     title: "Stellar Infomatica | Laboratory software suite",
-    description: "Twelve products for diagnostic laboratories on one rail. Built inside a working lab network in India.",
+    description: "An integrated suite of twelve products for diagnostic laboratories, developed inside a working laboratory network in India.",
     url: "https://stellarinfomatica.com",
     siteName: "Stellar Infomatica",
     locale: "en_IN",

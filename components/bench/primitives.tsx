@@ -147,9 +147,9 @@ export function TapeFlag({ className, label }: { className?: string; label?: str
     <svg viewBox="0 0 64 120" className={cn("h-[7.5rem] w-16", className)} aria-hidden>
       <defs>
         <pattern id="tape-weave" width="4" height="4" patternUnits="userSpaceOnUse">
-          <rect width="4" height="4" fill="#ff7a3d" />
-          <path d="M0 0h2v2H0zM2 2h2v2H2z" fill="#ff8f5a" opacity="0.7" />
-          <path d="M0 2h2v2H0zM2 0h2v2H2z" fill="#f0612a" opacity="0.5" />
+          <rect width="4" height="4" fill="#ee7d4a" />
+          <path d="M0 0h2v2H0zM2 2h2v2H2z" fill="#f29a70" opacity="0.7" />
+          <path d="M0 2h2v2H0zM2 0h2v2H2z" fill="#d8531f" opacity="0.5" />
         </pattern>
         <linearGradient id="tape-fold" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#000" stopOpacity="0.45" />
@@ -169,7 +169,7 @@ export function TapeFlag({ className, label }: { className?: string; label?: str
         <path d="M4 14 L60 14 L60 96 L52 104 L44 96 L36 106 L28 97 L20 105 L12 96 L4 102 Z" fill="url(#tape-weave)" />
         <path d="M4 14 L60 14 L60 96 L52 104 L44 96 L36 106 L28 97 L20 105 L12 96 L4 102 Z" fill="url(#tape-shade)" />
         {/* the fold: a doubled band at the top with its shadow falling down the strip */}
-        <path d="M4 2 L60 8 L60 24 L4 18 Z" fill="#ff8f5a" />
+        <path d="M4 2 L60 8 L60 24 L4 18 Z" fill="#f29a70" />
         <path d="M4 2 L60 8 L60 24 L4 18 Z" fill="url(#tape-weave)" opacity="0.6" />
         <rect x="4" y="18" width="56" height="22" fill="url(#tape-fold)" />
         {/* grease-pencil frame number */}
@@ -203,8 +203,8 @@ export function GreaseCross({ className }: { className?: string }) {
 /* Tape band: a strip of orange canvas across an item that is committed. */
 export function TapeBand({ className, children }: { className?: string; children?: ReactNode }) {
   return (
-    <span className={cn("relative inline-flex items-center px-2.5 py-1 font-display text-[0.75rem] uppercase tracking-[0.14em] text-ink", className)} style={{ background: "repeating-linear-gradient(90deg, #ff7a3d 0 2px, #ff8f5a 2px 4px)", transform: "rotate(-1.5deg)", boxShadow: "0 1px 2px rgba(0,0,0,0.45)" }}>
-      {children ?? "committed"}
+    <span className={cn("relative inline-flex items-center px-2.5 py-1 font-display text-[0.75rem] uppercase tracking-[0.14em] text-ink", className)} style={{ background: "repeating-linear-gradient(90deg, #ee7d4a 0 2px, #f29a70 2px 4px)", transform: "rotate(-1.5deg)", boxShadow: "0 1px 2px rgba(0,0,0,0.45)" }}>
+      {children ?? "Available"}
     </span>
   );
 }
@@ -213,8 +213,8 @@ export function Pin({ className }: { className?: string }) {
     <svg viewBox="0 0 14 24" className={cn("h-6 w-3.5", className)} aria-hidden>
       <defs>
         <radialGradient id="pin-head" cx="0.35" cy="0.3" r="0.8">
-          <stop offset="0" stopColor="#ffb089" />
-          <stop offset="0.45" stopColor="#ff5a1f" />
+          <stop offset="0" stopColor="#f5b391" />
+          <stop offset="0.45" stopColor="#ea5a22" />
           <stop offset="1" stopColor="#a8320c" />
         </radialGradient>
       </defs>

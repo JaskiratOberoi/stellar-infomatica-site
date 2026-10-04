@@ -182,10 +182,10 @@ export function Rail() {
         <div className="mx-auto max-w-[80rem] px-4 sm:px-6">
           <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-2 pt-5">
             <p className="label-caps text-edge-dim">
-              On the pins · <span className="text-edge">{current.name}</span> · {current.platform}
+              Selected · <span className="text-edge">{current.name}</span> · {current.platform}
             </p>
             <div className="flex items-center gap-3">
-              <button type="button" onClick={() => goTo(Math.max(active - 1, 0))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === 0} aria-label="Previous frame"><ArrowLeft /> Prev</button>
+              <button type="button" onClick={() => goTo(Math.max(active - 1, 0))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === 0} aria-label="Previous frame"><ArrowLeft /> Previous</button>
               <span className="label-caps tabular text-orange">{frameNo(active + 1)} / {frameNo(PRODUCTS.length)}</span>
               <button type="button" onClick={() => goTo(Math.min(active + 1, PRODUCTS.length - 1))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === PRODUCTS.length - 1} aria-label="Next frame">Next <ArrowRight /></button>
             </div>
@@ -195,10 +195,10 @@ export function Rail() {
           <div className="mt-3 h-px w-full bg-edge-dim/60" aria-hidden />
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4 lg:grid-cols-5" key={current.slug}>
-            {current.features.slice(0, 4).map((f, i) => (
+            {current.features.slice(0, 4).map((f) => (
               <div key={f} className="flex flex-col items-center">
                 <Pin />
-                <div className={cn("-mt-1 w-full border border-spool-light bg-char", !reduce && "swing")} style={{ ["--swing-from" as string]: `${(i % 2 ? -1 : 1) * (5 - i)}deg` }}>
+                <div className="-mt-1 w-full border border-spool-light bg-char">
                   <PerfEdge hole="edge" orientation="x" className="h-2.5 opacity-40" />
                   <p className="px-3 py-2.5 text-[0.9rem] leading-snug text-edge">{f}</p>
                   <PerfEdge hole="edge" orientation="x" className="h-2.5 opacity-40" />
@@ -206,8 +206,8 @@ export function Rail() {
               </div>
             ))}
             <div className="col-span-2 flex flex-col items-start justify-end gap-3 sm:col-span-4 lg:col-span-1 lg:items-center">
-              <PlateLink href={`/products/${current.slug}`} tone="secondary" className="w-full">Open frame {frameNo(current.frame)}</PlateLink>
-              <Link href="#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange">All twelve, by scene <ArrowDown /></Link>
+              <PlateLink href={`/products/${current.slug}`} tone="secondary" className="w-full">View {current.name}</PlateLink>
+              <Link href="#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange">All products <ArrowDown /></Link>
             </div>
           </div>
         </div>

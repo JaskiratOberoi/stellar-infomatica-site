@@ -21,16 +21,16 @@ const vectors = [
 export default function ClinicalPage() {
   return (
     <>
-      <section className="field-orange">
-        <PerfEdge hole="ink" className="h-4" />
+      <section className="bg-char">
+        <PerfEdge hole="ink" className="h-4 bg-orange" />
         <div className="mx-auto max-w-[80rem] px-4 py-12 sm:px-6 md:py-20">
-          <Link href="/products/biosentry" className="label-caps inline-flex items-center gap-1.5 text-ink/80 hover:text-ink"><ArrowLeft /> Frame 06 · Stellar BioSentry</Link>
-          <h1 className="mt-5 max-w-[14ch] text-[clamp(3rem,8vw,6rem)] font-semibold text-ink">The science of probability.</h1>
-          <p className="mt-6 max-w-[56ch] text-[1.125rem] text-ink/85 md:text-[1.25rem]">
-            The pathologies, markers and corrections that drive the BioSentry engine, shown with the working. Decision support for qualified professionals; the clinician signs the result.
+          <Link href="/products/biosentry" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-edge"><ArrowLeft /> Stellar BioSentry</Link>
+          <h1 className="mt-5 max-w-[14ch] text-[clamp(3rem,8vw,6rem)] font-medium text-edge">The science of probability.</h1>
+          <p className="mt-6 max-w-[56ch] text-[1.125rem] text-edge-dim md:text-[1.25rem]">
+            The pathologies, markers and corrections behind the BioSentry engine, with the method shown. BioSentry is decision support for qualified professionals; the reporting clinician signs the result.
           </p>
         </div>
-        <PerfEdge hole="ink" className="h-4" />
+        <PerfEdge hole="ink" className="h-4 bg-orange" />
       </section>
 
       <section className="mx-auto mt-20 max-w-[80rem] px-4 sm:px-6">
@@ -54,7 +54,7 @@ export default function ClinicalPage() {
           ))}
         </ul>
         <div className="mt-10 flex flex-wrap gap-4">
-          <PlateLink href="/products/biosentry" tone="secondary">Open frame 06</PlateLink>
+          <PlateLink href="/products/biosentry" tone="secondary">View Stellar BioSentry</PlateLink>
           <Link href="/disclaimer" className="label-caps inline-flex items-center gap-1.5 self-center text-edge-dim hover:text-orange">Read the clinical disclaimer <ArrowRight /></Link>
         </div>
       </section>
