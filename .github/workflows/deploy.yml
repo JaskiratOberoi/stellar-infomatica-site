@@ -28,6 +28,5 @@ jobs:
             cls -la;
             echo "== one level up ==";
             cls -la ..;
-            echo "== autobot (no .git objects) =="; find autobot | grep -v "/.git/" | head -250;
-            echo "== autobot git refs =="; find autobot | grep -E "/.git/(HEAD|config|refs/heads)" | head -10;
+            echo "== autobot (no .git, no node_modules) =="; find autobot | grep -v "/.git/" | grep -v node_modules | head -200;
             quit'
