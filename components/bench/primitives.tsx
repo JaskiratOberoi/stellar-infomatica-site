@@ -81,13 +81,13 @@ function PlateHoles({ tone }: { tone: PlateProps["tone"] }) {
 }
 
 const plateBase =
-  "relative inline-flex items-center justify-center font-display uppercase tracking-[0.14em] whitespace-nowrap select-none transition-[background-color,color,transform] duration-200 ease-out active:translate-y-px shadow-[0_3px_8px_-2px_rgba(0,0,0,0.5)]";
+  "relative inline-flex items-center justify-center font-display uppercase tracking-[0.14em] text-center leading-[1.1] select-none transition-[background-color,color,transform] duration-200 ease-out active:translate-y-px shadow-[0_3px_8px_-2px_rgba(0,0,0,0.5)]";
 const plateTone = {
   primary: "bg-accent text-ink hover:bg-tape",
   secondary: "border border-accent text-accent hover:bg-accent hover:text-ink",
   ink: "bg-ink text-accent border border-accent/60 hover:border-accent hover:text-tape",
 };
-const plateSize = { md: "h-11 px-9 text-[0.9rem]", lg: "h-14 px-12 text-[1.05rem]" };
+const plateSize = { md: "min-h-11 px-9 py-2 text-[0.9rem]", lg: "min-h-14 px-12 py-2.5 text-[1.05rem]" };
 
 export function PlateLink({ tone = "primary", size = "md", className, children, ...rest }: PlateProps & ComponentProps<typeof Link>) {
   return (

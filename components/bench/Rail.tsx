@@ -206,7 +206,7 @@ export function Rail() {
               </div>
             ))}
             <div className="col-span-2 flex flex-col items-start justify-end gap-3 sm:col-span-4 lg:col-span-1 lg:items-center">
-              <PlateLink href={`/products/${current.slug}`} tone="secondary" className="w-full">View {current.name}</PlateLink>
+              <PlateLink href={`/products/${current.slug}`} tone="secondary" className="w-full">View product</PlateLink>
               <Link href="#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-accent">All products <ArrowDown /></Link>
             </div>
           </div>
