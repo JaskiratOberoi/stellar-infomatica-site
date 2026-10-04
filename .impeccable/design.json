@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-04T00:00:00Z",
+  "title": "Design System: Stellar Infomatica",
+  "extensions": {
+    "colorMeta": {
+      "orange": { "role": "primary", "displayName": "Grain Orange", "canonical": "#ff5a1f", "tonalRamp": ["oklch(22% 0.09 38)", "oklch(34% 0.14 38)", "oklch(46% 0.18 38)", "oklch(58% 0.21 38)", "oklch(68% 0.21 38)", "oklch(78% 0.14 38)", "oklch(88% 0.08 38)", "oklch(95% 0.03 38)"] },
+      "tape": { "role": "primary", "displayName": "Tape", "canonical": "#ff7a3d", "tonalRamp": ["oklch(24% 0.08 42)", "oklch(36% 0.12 42)", "oklch(48% 0.16 42)", "oklch(60% 0.19 42)", "oklch(72% 0.18 42)", "oklch(81% 0.12 42)", "oklch(89% 0.07 42)", "oklch(95% 0.03 42)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0a0a0a", "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2e2e2e", "#3d3d3d", "#6a6a6a", "#b8b8b8", "#f2f2f2", "#ffffff"] },
+      "char": { "role": "neutral", "displayName": "Char", "canonical": "#1a1a1a", "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2e2e2e", "#3d3d3d", "#6a6a6a", "#b8b8b8", "#f2f2f2", "#ffffff"] },
+      "spool": { "role": "neutral", "displayName": "Spool", "canonical": "#2e2e2e", "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2e2e2e", "#3d3d3d", "#6a6a6a", "#b8b8b8", "#f2f2f2", "#ffffff"] },
+      "spool-light": { "role": "neutral", "displayName": "Spool Light", "canonical": "#3d3d3d", "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2e2e2e", "#3d3d3d", "#6a6a6a", "#b8b8b8", "#f2f2f2", "#ffffff"] },
+      "edge": { "role": "neutral", "displayName": "Edge", "canonical": "#f2f2f2", "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2e2e2e", "#3d3d3d", "#6a6a6a", "#b8b8b8", "#f2f2f2", "#ffffff"] },
+      "edge-dim": { "role": "neutral", "displayName": "Edge Dim", "canonical": "#b8b8b8", "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2e2e2e", "#3d3d3d", "#6a6a6a", "#b8b8b8", "#f2f2f2", "#ffffff"] },
+      "punch": { "role": "neutral", "displayName": "Punch", "canonical": "#ffffff", "tonalRamp": ["#0a0a0a", "#1a1a1a", "#2e2e2e", "#3d3d3d", "#6a6a6a", "#b8b8b8", "#f2f2f2", "#ffffff"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page headline; caps, 0.92 line-height, one orange span on the last line." },
+      "numeral": { "displayName": "Numeral", "purpose": "The frame number on a product page header, light and tabular." },
+      "headline": { "displayName": "Headline", "purpose": "SceneHead h2 with the scene word in orange and an orange rule beneath." },
+      "title": { "displayName": "Title", "purpose": "h3 in cells and h2 on product pages; frame names on trims." },
+      "body": { "displayName": "Body", "purpose": "Running copy in Barlow sentence case, on trims and in windows only. Readability adaptation from the single-condensed source world, confirmed in the finish review." },
+      "label": { "displayName": "Label", "purpose": "label-caps: nav links, platform lines, captions, rail controls, footer meta." },
+      "plate": { "displayName": "Plate", "purpose": "Text on plates (buttons); 1.05rem at the lg size." }
+    },
+    "materials": [
+      { "name": "grain", "value": "opacity 0.16; mix-blend-mode overlay; 220px fractal-noise tile; animation grain-shift 1.2s steps(6)", "purpose": "Fixed film-grain layer over the whole page; disabled under prefers-reduced-motion." },
+      { "name": "field-orange", "value": "background #ff5a1f with a 160px fractal-noise tile at 35% alpha", "purpose": "Every orange surface: rail, headers, contact close." },
+      { "name": "sprocket-x", "value": "0.6rem x 0.5rem square holes on a 1.25rem pitch, hole colour via --perf-hole", "purpose": "Edge strip between ink and orange." },
+      { "name": "perf-x", "value": "round holes, 1.25rem pitch, hole colour via --perf-hole", "purpose": "Fine perforation on trims at 40% opacity." },
+      { "name": "rail-ticks", "value": "hairline every frame-w/5 at 40% height, major at frame-w at 100%", "purpose": "The tick scale above the rail frames." },
+      { "name": "grease", "value": "SVG filter: feTurbulence fractalNoise 0.55, 2 octaves, seed 7; feDisplacementMap scale 1.6", "purpose": "Hand-weight for grease ticks, crosses and the tape flag numeral." }
+    ],
+    "shadows": [
+      { "name": "plate-lift", "value": "0 3px 8px -2px rgba(0,0,0,0.5)", "purpose": "Every plate at rest; unchanged on hover." },
+      { "name": "window-inset", "value": "inset 0 0 0 1px rgba(0,0,0,0.25)", "purpose": "The punched edge of a white window on rail and product frames." },
+      { "name": "window-inset-deep", "value": "inset 0 0 0 1px rgba(0,0,0,0.25), inset 0 2px 10px rgba(0,0,0,0.35)", "purpose": "The Window primitive's default inset." },
+      { "name": "frame-active-ring", "value": "0 0 0 3px var(--color-ink), 0 0 0 5px var(--color-edge)", "purpose": "The frame in view on the rail." },
+      { "name": "tape-band-drop", "value": "0 1px 2px rgba(0,0,0,0.45)", "purpose": "Tape band on product-page state rows." },
+      { "name": "rail-focus", "value": "inset 0 0 0 3px var(--color-ink)", "purpose": "Keyboard focus on the rail scroller." },
+      { "name": "focus-ring", "value": "outline 2px solid var(--color-orange); outline-offset 3px", "purpose": "Global focus-visible." }
+    ],
+    "motion": [
+      { "name": "plate-transition", "value": "background-color, color, transform 200ms ease-out", "purpose": "Plate hover and press." },
+      { "name": "frame-transition", "value": "box-shadow, transform 300ms", "purpose": "Rail frame ring on activation." },
+      { "name": "tape-flag-spring", "value": "spring stiffness 260 damping 28", "purpose": "Tape flag tracking the frame in view." },
+      { "name": "swing", "value": "1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; from +-5..2deg", "purpose": "Trims re-hanging under the rail." },
+      { "name": "grain-shift", "value": "1.2s steps(6) infinite", "purpose": "Film-grain drift." },
+      { "name": "scroll-snap", "value": "scroll-snap-type x mandatory; scroll-padding-inline matched to rail padding", "purpose": "The rail settles on frame pitch." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "40rem" },
+      { "name": "md", "value": "48rem" },
+      { "name": "lg", "value": "64rem" }
+    ],
+    "frameWidths": [
+      { "name": "base", "value": "15rem" },
+      { "name": "sm", "value": "17rem" },
+      { "name": "lg", "value": "19rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Plate, primary",
+      "kind": "button",
+      "refersTo": "plate-primary",
+      "description": "Orange punched tag with ink hole columns; the demo call to action on ink.",
+      "html": "<a class=\"ds-plate ds-plate-primary\" href=\"#\"><span class=\"ds-holes ds-holes-l\" aria-hidden=\"true\"><i></i><i></i><i></i></span>Request a demo<span class=\"ds-holes ds-holes-r\" aria-hidden=\"true\"><i></i><i></i><i></i></span></a>",
+      "css": ".ds-plate { position: relative; display: inline-flex; align-items: center; justify-content: center; height: 2.75rem; padding: 0 2.25rem; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.14em; white-space: nowrap; text-decoration: none; border-radius: 0; user-select: none; box-shadow: 0 3px 8px -2px rgba(0,0,0,0.5); transition: background-color 0.2s ease-out, color 0.2s ease-out, transform 0.2s ease-out; } .ds-plate:active { transform: translateY(1px); } .ds-plate:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 3px; } .ds-holes { position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.25rem; } .ds-holes-l { left: 0.375rem; } .ds-holes-r { right: 0.375rem; } .ds-holes i { display: block; width: 0.375rem; height: 0.375rem; border-radius: 9999px; } .ds-plate-primary { background: #ff5a1f; color: #0a0a0a; } .ds-plate-primary .ds-holes i { background: #0a0a0a; } .ds-plate-primary:hover { background: #ff7a3d; }"
+    },
+    {
+      "name": "Plate, secondary",
+      "kind": "button",
+      "refersTo": "plate-secondary",
+      "description": "Outlined orange plate with ring holes; 'Open frame 04' and 'Back to the rail'.",
+      "html": "<a class=\"ds-plate ds-plate-secondary\" href=\"#\"><span class=\"ds-holes ds-holes-l\" aria-hidden=\"true\"><i></i><i></i><i></i></span>Open frame 04<span class=\"ds-holes ds-holes-r\" aria-hidden=\"true\"><i></i><i></i><i></i></span></a>",
+      "css": ".ds-plate { position: relative; display: inline-flex; align-items: center; justify-content: center; height: 2.75rem; padding: 0 2.25rem; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.14em; white-space: nowrap; text-decoration: none; border-radius: 0; user-select: none; box-shadow: 0 3px 8px -2px rgba(0,0,0,0.5); transition: background-color 0.2s ease-out, color 0.2s ease-out, transform 0.2s ease-out; } .ds-plate:active { transform: translateY(1px); } .ds-plate:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 3px; } .ds-holes { position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.25rem; } .ds-holes-l { left: 0.375rem; } .ds-holes-r { right: 0.375rem; } .ds-holes i { display: block; width: 0.375rem; height: 0.375rem; border-radius: 9999px; border: 1px solid currentColor; } .ds-plate-secondary { background: transparent; color: #ff5a1f; border: 1px solid #ff5a1f; } .ds-plate-secondary:hover { background: #ff5a1f; color: #0a0a0a; }"
+    },
+    {
+      "name": "Plate, ink",
+      "kind": "button",
+      "refersTo": "plate-ink",
+      "description": "Ink plate with orange holes for use on the orange field (the contact close).",
+      "html": "<div style=\"padding:1rem;background:#ff5a1f\"><a class=\"ds-plate ds-plate-ink\" href=\"#\"><span class=\"ds-holes ds-holes-l\" aria-hidden=\"true\"><i></i><i></i><i></i></span>Request a demo<span class=\"ds-holes ds-holes-r\" aria-hidden=\"true\"><i></i><i></i><i></i></span></a></div>",
+      "css": ".ds-plate { position: relative; display: inline-flex; align-items: center; justify-content: center; height: 3.5rem; padding: 0 3rem; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.14em; white-space: nowrap; text-decoration: none; border-radius: 0; user-select: none; box-shadow: 0 3px 8px -2px rgba(0,0,0,0.5); transition: background-color 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out, transform 0.2s ease-out; } .ds-plate:active { transform: translateY(1px); } .ds-plate:focus-visible { outline: 2px solid #0a0a0a; outline-offset: 3px; } .ds-holes { position: absolute; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 0.25rem; } .ds-holes-l { left: 0.375rem; } .ds-holes-r { right: 0.375rem; } .ds-holes i { display: block; width: 0.375rem; height: 0.375rem; border-radius: 9999px; background: #ff5a1f; } .ds-plate-ink { background: #0a0a0a; color: #ff5a1f; border: 1px solid rgba(255,90,31,0.6); } .ds-plate-ink:hover { border-color: #ff5a1f; color: #ff7a3d; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed ink bar: wordmark, label-caps links with an orange underline on the current page, and an orange sprocket strip beneath.",
+      "html": "<header class=\"ds-nav\"><div class=\"ds-nav-row\"><span class=\"ds-wordmark\"><svg viewBox=\"0 0 40 28\" width=\"34\" height=\"24\" fill=\"none\" aria-hidden=\"true\"><rect x=\"0.75\" y=\"0.75\" width=\"38.5\" height=\"26.5\" rx=\"1.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/><g fill=\"currentColor\"><rect x=\"3.5\" y=\"4\" width=\"3\" height=\"2.4\"/><rect x=\"33.5\" y=\"4\" width=\"3\" height=\"2.4\"/><rect x=\"3.5\" y=\"10\" width=\"3\" height=\"2.4\"/><rect x=\"33.5\" y=\"10\" width=\"3\" height=\"2.4\"/><rect x=\"3.5\" y=\"16\" width=\"3\" height=\"2.4\"/><rect x=\"33.5\" y=\"16\" width=\"3\" height=\"2.4\"/><rect x=\"3.5\" y=\"22\" width=\"3\" height=\"2.4\"/><rect x=\"33.5\" y=\"22\" width=\"3\" height=\"2.4\"/><path d=\"M20 6.5l2.1 5.4 5.7.3-4.5 3.6 1.5 5.6L20 18.3l-4.8 3.1 1.5-5.6-4.5-3.6 5.7-.3L20 6.5z\"/></g></svg><span>Stellar <em>Infomatica</em></span></span><nav class=\"ds-nav-links\"><a href=\"#\">The suite</a><a href=\"#\">The bench</a><a href=\"#\" class=\"is-current\">Clinical logic</a><a href=\"#\">Contact</a></nav></div><div class=\"ds-sprocket\" aria-hidden=\"true\"></div></header>",
+      "css": ".ds-nav { background: rgba(10,10,10,0.95); color: #f2f2f2; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; } .ds-nav-row { display: flex; align-items: center; gap: 1.5rem; height: 4rem; padding: 0 1.5rem; } .ds-wordmark { display: inline-flex; align-items: center; gap: 0.625rem; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1; } .ds-wordmark em { font-style: normal; font-weight: 300; } .ds-nav-links { margin-left: auto; display: flex; gap: 1.75rem; } .ds-nav-links a { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.12em; line-height: 1; color: #b8b8b8; text-decoration: none; padding-bottom: 0.25rem; border-bottom: 1px solid transparent; transition: color 0.2s; } .ds-nav-links a:hover { color: #f2f2f2; } .ds-nav-links a.is-current { color: #f2f2f2; border-bottom-color: #ff5a1f; } .ds-nav-links a:focus-visible { outline: 2px solid #ff5a1f; outline-offset: 3px; } .ds-sprocket { height: 0.625rem; background-color: #ff5a1f; background-image: linear-gradient(#0a0a0a, #0a0a0a); background-size: 0.6rem 0.5rem; background-repeat: repeat-x; background-position: 0.4rem center; }"
+    },
+    {
+      "name": "Tape band",
+      "kind": "chip",
+      "refersTo": "tape-band",
+      "description": "A short rotated strip of striped tape reading 'committed' on product-page state rows.",
+      "html": "<span class=\"ds-tape-band\">committed</span>",
+      "css": ".ds-tape-band { position: relative; display: inline-flex; align-items: center; padding: 0.25rem 0.625rem; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: #0a0a0a; background: repeating-linear-gradient(90deg, #ff7a3d 0 2px, #ff8f5a 2px 4px); transform: rotate(-1.5deg); box-shadow: 0 1px 2px rgba(0,0,0,0.45); }"
+    },
+    {
+      "name": "Hung trim",
+      "kind": "card",
+      "refersTo": "trim",
+      "description": "A deferred item: a pin, then a bordered char strip with fine perforations carrying one feature line.",
+      "html": "<div class=\"ds-hang\"><svg class=\"ds-pin\" viewBox=\"0 0 14 24\" aria-hidden=\"true\"><defs><radialGradient id=\"ds-pin-head\" cx=\"0.35\" cy=\"0.3\" r=\"0.8\"><stop offset=\"0\" stop-color=\"#ffb089\"/><stop offset=\"0.45\" stop-color=\"#ff5a1f\"/><stop offset=\"1\" stop-color=\"#a8320c\"/></radialGradient></defs><ellipse cx=\"7.5\" cy=\"22\" rx=\"3.5\" ry=\"1\" fill=\"#000\" opacity=\"0.5\"/><rect x=\"6.3\" y=\"7.5\" width=\"1.4\" height=\"14\" fill=\"#d8d8d8\"/><rect x=\"7\" y=\"7.5\" width=\"0.7\" height=\"14\" fill=\"#8a8a8a\"/><circle cx=\"7\" cy=\"4.4\" r=\"4\" fill=\"url(#ds-pin-head)\"/></svg><div class=\"ds-trim\"><div class=\"ds-perf\" aria-hidden=\"true\"></div><p>Offline write queue: results are never lost when the LIS is unreachable</p><span class=\"ds-trim-label\">deferred</span><div class=\"ds-perf\" aria-hidden=\"true\"></div></div></div>",
+      "css": ".ds-hang { display: flex; flex-direction: column; align-items: center; width: 14rem; background: #0a0a0a; padding: 0.5rem; } .ds-pin { width: 0.875rem; height: 1.5rem; } .ds-trim { margin-top: -0.25rem; width: 100%; border: 1px solid #3d3d3d; background: #1a1a1a; color: #f2f2f2; } .ds-trim p { margin: 0; padding: 0.625rem 0.75rem; font-family: Barlow, system-ui, sans-serif; font-size: 0.9rem; line-height: 1.375; } .ds-trim-label { display: block; padding: 0 0.75rem 0.625rem; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.12em; line-height: 1; color: #b8b8b8; } .ds-perf { height: 0.625rem; opacity: 0.4; background-image: radial-gradient(circle at center, #f2f2f2 0 32%, transparent 34%); background-size: 1.25rem 100%; background-repeat: repeat-x; background-position: center; }"
+    },
+    {
+      "name": "Grease tick line",
+      "kind": "custom",
+      "refersTo": "trim",
+      "description": "A committed feature line: orange hand-weight tick, edge text.",
+      "html": "<ul class=\"ds-ticks\"><li><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3.2 12.6c.6-.9 1.4-1.6 2.3-1.1 1.6 1 3 2.6 4.1 4 .3.3.5.2.7-.1 2.6-4 5.6-7.5 9.2-10.4.8-.6 1.9.3 1.4 1.2-3.4 3.8-6.4 8-8.9 12.4-.5.9-1.6 1-2.2.2-1.8-2.2-3.8-4.2-6.3-5.4-.5-.2-.6-.6-.3-.8z\"/></svg><span>ASTM, HL7 and vendor-specific protocol decoding over TCP and serial</span></li><li><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3.2 12.6c.6-.9 1.4-1.6 2.3-1.1 1.6 1 3 2.6 4.1 4 .3.3.5.2.7-.1 2.6-4 5.6-7.5 9.2-10.4.8-.6 1.9.3 1.4 1.2-3.4 3.8-6.4 8-8.9 12.4-.5.9-1.6 1-2.2.2-1.8-2.2-3.8-4.2-6.3-5.4-.5-.2-.6-.6-.3-.8z\"/></svg><span>Automatic analyte-to-test mapping with an editor for the exceptions</span></li></ul>",
+      "css": ".ds-ticks { list-style: none; margin: 0; padding: 0; background: #0a0a0a; color: #f2f2f2; font-family: Barlow, system-ui, sans-serif; font-size: 0.95rem; line-height: 1.375; border-top: 1px solid #2e2e2e; border-bottom: 1px solid #2e2e2e; } .ds-ticks li { display: flex; gap: 1rem; padding: 0.75rem 0; } .ds-ticks li + li { border-top: 1px solid #2e2e2e; } .ds-ticks svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; margin-top: 0.125rem; fill: #ff5a1f; }"
+    },
+    {
+      "name": "Punched window",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "The only white on the site: a punched frame with an inset hairline and a scaled screen inside, titled with a Demo data tag.",
+      "html": "<div class=\"ds-window\"><div class=\"ds-screen\"><div class=\"ds-screen-bar\"><i></i><span>Infinity · Worklist</span><b>Demo data</b></div><div class=\"ds-screen-body\"></div></div></div>",
+      "css": ".ds-window { background: #ffffff; color: #0a0a0a; padding: 0.375rem; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.25); width: 18rem; } .ds-screen { aspect-ratio: 16 / 10; background: #0f1115; color: #e8e8e8; display: flex; flex-direction: column; font-size: 11px; } .ds-screen-bar { display: flex; align-items: center; gap: 0.5rem; padding: 0.375rem 0.625rem; background: #13161c; border-bottom: 1px solid rgba(255,255,255,0.1); } .ds-screen-bar i { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #ff5a1f; } .ds-screen-bar span { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.85); } .ds-screen-bar b { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 8px; text-transform: uppercase; letter-spacing: 0.14em; color: #ff9a6b; border: 1px solid rgba(255,90,31,0.7); border-radius: 2px; padding: 1px 4px; } .ds-screen-body { flex: 1; }"
+    },
+    {
+      "name": "Hairline cell grid",
+      "kind": "card",
+      "refersTo": "cell",
+      "description": "Facts and lists on a 1px spool grid: ink cells with 1.75rem padding, title in condensed caps, body in edge-dim.",
+      "html": "<div class=\"ds-cells\"><div class=\"ds-cell\"><h3>Around ninety</h3><p>business units, from central labs to collection points, served by the same stack.</p></div><div class=\"ds-cell\"><h3>Ten roles</h3><p>from lab director to front desk, shared across Infinity, Telo and Nexus.</p></div><div class=\"ds-cell\"><h3>One ledger</h3><p>for every tube, letterhead and reagent. Balances are derived from history.</p></div></div>",
+      "css": ".ds-cells { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid #2e2e2e; background: #2e2e2e; } .ds-cell { background: #0a0a0a; padding: 1.75rem; color: #f2f2f2; } .ds-cell h3 { margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 400; font-size: 2rem; line-height: 0.92; letter-spacing: 0.01em; text-transform: uppercase; } .ds-cell p { margin: 0.75rem 0 0; font-family: Barlow, system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.5; color: #b8b8b8; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Cutting Bench Rail",
+    "overview": "The site is a film editor's cutting bench. An ink-black field is the bench top; a grain-orange rail with square sprocket holes runs full-bleed across it and holds the twelve products as numbered frames; the product screens live only inside punched white windows cut into those frames; and everything the visitor needs to know about state is a physical mark on the material rather than a hue or a badge. The world was chosen as a refusal of the healthcare-SaaS hero-plus-feature-grid, and the build keeps that refusal: there is no hero image, no card grid of icons, no gradient wash.\n\nDensity is editorial and physical. Large condensed caps headlines sit hard on 0.92 line-height; frame numerals (01 to 12) ride the sprocket strips and the tick scale; running copy is carried on trims (bordered strips with perforated edges) or inside windows, never loose on the orange. A fixed film-grain layer sits over the whole page and a coarser grain is baked into every orange surface, so the two materials read as paper and tape rather than as flat fills. Motion is restrained to the physical: the rail scrubs with native inertia and scroll-snap, the tape flag springs to the frame in view, the trims swing once from their pins when they re-hang.\n\nThe state vocabulary as shipped: tape flag = the frame in view; grease tick = a committed feature; tape band = committed state on product pages; hung on a pin with a perforated trim = deferred; a punched white strip with a grease cross and the caption \"not in this cut\" = a deferred item in the pins section. Nothing else encodes state.",
+    "keyCharacteristics": [
+      "Two materials only: ink field and grain-orange rail, with white reserved for punched windows.",
+      "One display face (Barlow Condensed, caps) for headlines, labels, numerals and plates; Barlow sentence case for running copy, confined to trims and windows.",
+      "State is a mark (tape flag, grease tick, tape band, pin, grease cross), never a colour change or a glow.",
+      "Perforation strips (sprocket-x / perf-y) are the edge treatment on every transition between materials.",
+      "Plates (buttons) are punched metal tags with hole columns; one soft offset shadow, hover shifts to the tape tone.",
+      "Every image on the site is inline SVG authored in code; no rasters ship."
+    ],
+    "rules": [
+      { "name": "The Two Materials Rule", "body": "Every surface is either the ink field or the orange rail. Grey steps (char, spool, spool-light) are only ever trims, borders and dividers on the ink; they never form a section background of their own.", "section": "colors" },
+      { "name": "The Punched Window Rule", "body": "White appears only as a window with an inset hairline (inset 0 0 0 1px rgba(0,0,0,0.25)) and a product screen inside it. A white panel without a screen in it does not exist in this world; the one exception is the 2.25rem crossed strip in the pins section, which reads as an empty frame.", "section": "colors" },
+      { "name": "The State Is a Mark Rule", "body": "No colour is a status colour. Orange is the rail's material, not \"active\"; edge-dim is secondary text, not \"disabled\". Status within the site is carried by the tape flag, grease tick, tape band, pin and grease cross. (Status dots and chips exist only inside the miniature app vignettes, where they depict the product's own UI.)", "section": "colors" },
+      { "name": "The One Voice Rule", "body": "Everything that is not running copy is Barlow Condensed in caps. There is no third face, no serif, no italic. Monospace appears only inside vignettes depicting a raw-frame log or sample IDs, where it is the product's own UI.", "section": "typography" },
+      { "name": "The Numeral Rule", "body": "Frame numbers are always two digits (01 to 12), always Barlow Condensed, always tabular. The numeral is printed on the sprocket strip or the tick scale, never inside the window.", "section": "typography" },
+      { "name": "The Copy-on-a-Trim Rule", "body": "Barlow running copy is never set loose on the orange field. On orange, only display, labels and plates appear; a paragraph that must sit in an orange section is Barlow at ink/85 and no longer than 56ch, as on the contact close and the clinical header.", "section": "typography" },
+      { "name": "The No Glow Rule", "body": "Shadows are black, soft and short (8px blur or less) and only sit under things that are physically lifted: plates, tape, the pin's foot. Nothing emits light.", "section": "elevation" },
+      { "name": "The Grain Is the Atmosphere Rule", "body": "The fixed .grain overlay (16% opacity, overlay blend, 220px tile, 1.2s stepped shift) and the coarser orange grain (field-orange, 160px tile) are the only texture. New surfaces inherit them by being ink or orange; they are never re-applied locally.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put every product screen inside a punched white window with the inset hairline; the window is the only white on the site.",
+      "Do carry running copy on a trim or inside a window; on the orange field use display, labels and plates only.",
+      "Do separate ink from orange with a sprocket strip (PerfEdge), ink holes on orange and orange holes on ink frames.",
+      "Do mark state with the shipped vocabulary: tape flag in view, grease tick committed, tape band committed on product pages, pin plus perforated trim deferred, grease cross with \"not in this cut\" for deferred items on the pins.",
+      "Do set frame numbers as two tabular digits in Barlow Condensed on the sprocket strip or tick scale.",
+      "Do keep plates square, with hole columns and the one plate shadow (0 3px 8px -2px rgba(0,0,0,0.5)); hover is the tape tone.",
+      "Do build facts and lists on the hairline grid (gap-px on spool) rather than on cards.",
+      "Do author new imagery as inline SVG in code; nothing rasterised ships, and app/icon.svg carries its own hand-authored note.",
+      "Do print \"Demo data\" in the title bar of any new screen vignette and caption its window as illustrative."
+    ],
+    "donts": [
+      "Don't add a glow, a coloured shadow, a blur halo or a gradient wash; shadows are black, short and only under lifted things.",
+      "Don't use orange, green, amber or red as status colours on the site; status inside vignettes is the product's own UI and stays in the window.",
+      "Don't introduce a third typeface, a serif, an italic, or a monospace outside a vignette depicting logs or IDs.",
+      "Don't set Barlow running copy loose on the orange field, or set a paragraph in Barlow Condensed.",
+      "Don't round corners beyond the 2px hairline; plates, windows, trims and frames are square.",
+      "Don't build a hero image, an icon feature grid, a testimonial strip or a logo wall; the world refuses the healthcare-SaaS layout and the site publishes no customer logos or testimonials.",
+      "Don't add a kicker or eyebrow above a headline; the only thing that precedes a headline is the scene word inside SceneHead or a label-caps back-link.",
+      "Don't change frame size on narrow screens; drop the number of frames in view instead."
+    ]
+  }
+}
