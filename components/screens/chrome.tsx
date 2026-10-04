@@ -10,6 +10,7 @@ export function Screen({ title, children, className, nav }: { title: string; chi
       <div className="flex items-center gap-2 border-b border-white/10 bg-[#13161c] px-2.5 py-1.5">
         <span className="h-2 w-2 rounded-full bg-[#ff5a1f]" />
         <span className="font-display uppercase tracking-[0.12em] text-[10px] text-white/85">{title}</span>
+        <span className="ml-1 rounded-[2px] border border-[#ff5a1f]/70 px-1 py-px font-display text-[8px] uppercase tracking-[0.14em] text-[#ff9a6b]">Demo data</span>
         {nav && (
           <span className="ml-auto hidden gap-2.5 text-[9.5px] text-white/45 sm:flex">
             {nav.map((n, i) => (

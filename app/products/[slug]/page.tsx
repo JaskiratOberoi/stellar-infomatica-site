@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { GROUPS, PRODUCTS, bySlug, frameNo } from "@/lib/products";
 import { ScaledScreen } from "@/components/bench/ScaledScreen";
 import { ScreenFor } from "@/components/screens";
-import { GreaseTick, PerfEdge, Pin, PlateAnchor, PlateLink } from "@/components/bench/primitives";
+import { ArrowLeft, ArrowRight, GreaseTick, PerfEdge, Pin, PlateAnchor, PlateLink, TapeBand } from "@/components/bench/primitives";
 import { DEMO_MAILTO } from "@/components/layout/Navbar";
 
 export const dynamicParams = false;
@@ -41,7 +41,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <PerfEdge hole="ink" className="h-4" />
         <div className="mx-auto max-w-[80rem] px-4 py-10 sm:px-6 md:py-14">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <Link href="/#products" className="label-caps text-ink/80 hover:text-ink">◀ All frames</Link>
+            <Link href="/#products" className="label-caps inline-flex items-center gap-1.5 text-ink/80 hover:text-ink"><ArrowLeft /> All frames</Link>
             <span className="label-caps text-ink/70">{group.scene} · {group.title}</span>
           </div>
           <div className="mt-6 flex flex-wrap items-end gap-x-8 gap-y-4">
@@ -95,7 +95,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <li key={m.label} className="flex items-center gap-3 border border-spool-light bg-char px-4 py-3">
                   <GreaseTick className="shrink-0 text-orange" />
                   <span className="text-edge">{m.label}</span>
-                  <span className="label-caps ml-auto text-edge-dim">committed</span>
+                  <TapeBand className="ml-auto" />
                 </li>
               ))}
             </ul>
@@ -149,14 +149,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <nav className="mx-auto mt-20 grid max-w-[80rem] gap-px border border-spool bg-spool px-0 sm:grid-cols-2" aria-label="Neighbouring frames">
         {prev ? (
           <Link href={`/products/${prev.slug}`} className="group flex items-center gap-4 bg-ink p-5 hover:bg-char">
-            <span className="label-caps text-edge-dim">◀ {frameNo(prev.frame)}</span>
+            <span className="label-caps inline-flex items-center gap-1.5 text-edge-dim"><ArrowLeft /> {frameNo(prev.frame)}</span>
             <span className="font-display text-[1.4rem] uppercase text-edge group-hover:text-orange">{prev.name}</span>
           </Link>
         ) : <span className="bg-ink p-5" />}
         {next ? (
           <Link href={`/products/${next.slug}`} className="group flex items-center justify-end gap-4 bg-ink p-5 hover:bg-char">
             <span className="font-display text-[1.4rem] uppercase text-edge group-hover:text-orange">{next.name}</span>
-            <span className="label-caps text-edge-dim">{frameNo(next.frame)} ▶</span>
+            <span className="label-caps inline-flex items-center gap-1.5 text-edge-dim">{frameNo(next.frame)} <ArrowRight /></span>
           </Link>
         ) : <span className="bg-ink p-5" />}
       </nav>

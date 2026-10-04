@@ -7,9 +7,10 @@ import { useId, useState } from "react";
 export function MoMExplainer() {
   const [mom, setMom] = useState(1.0);
   const id = useId();
-  const min = 0.1;
+  // The chart spans one third to three times the median, so ×3 and ÷3 sit
+  // the same distance from the centre line. The slider stops at 0.4.
+  const min = 0.4;
   const max = 3.0;
-  // 1.0 sits at the vertical middle; the scale is log so 0.5 and 2.0 are symmetric.
   // Rounded so server and client render the same string.
   const pos = (v: number) => Math.round((50 - (Math.log(v) / Math.log(max)) * 50) * 100) / 100;
   const top = Math.max(4, Math.min(96, pos(mom)));
@@ -45,12 +46,12 @@ export function MoMExplainer() {
       <div className="bg-punch p-2 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.25)]">
         <div className="relative h-[320px] bg-[#0f1115] text-[#e8e8e8]" aria-hidden>
           <div className="absolute left-3 top-3 bottom-3 flex flex-col justify-between font-display text-[0.75rem] tracking-[0.1em] text-white/45">
-            {[3.0, 2.0, 1.0, 0.5, 0.1].map((v) => (
-              <span key={v} className={v === 1 ? "text-[#ff5a1f]" : ""} style={{ position: "absolute", top: `calc(${pos(v)}% - 0.5em)` }}>{v.toFixed(1)}</span>
+            {[3.0, 2.0, 1.0, 0.5, 0.33].map((v) => (
+              <span key={v} className={v === 1 ? "text-[#ff5a1f]" : ""} style={{ position: "absolute", top: `calc(${pos(v)}% - 0.5em)` }}>{v === 0.33 ? "⅓" : v.toFixed(1)}</span>
             ))}
           </div>
           <div className="absolute inset-y-3 left-14 right-4">
-            {[3.0, 2.0, 0.5, 0.1].map((v) => (
+            {[3.0, 2.0, 0.5, 0.33].map((v) => (
               <div key={v} className="absolute left-0 right-0 h-px bg-white/10" style={{ top: `${pos(v)}%` }} />
             ))}
             <div className="absolute left-0 right-0 border-t-2 border-dashed border-[#ff5a1f]/80" style={{ top: "50%" }}>
@@ -63,7 +64,7 @@ export function MoMExplainer() {
               <div className="h-5 w-5 rounded-full border-2 border-white bg-[#ff5a1f] shadow-[0_0_0_4px_rgba(255,90,31,0.25)]" />
             </div>
           </div>
-          <div className="absolute bottom-3 left-14 font-display text-[0.75rem] tracking-[0.1em] text-white/45">Log scale · same distance for ×2 and ÷2</div>
+          <div className="absolute bottom-3 left-14 font-display text-[0.75rem] tracking-[0.1em] text-white/45">Log scale · same distance for ×3 and ÷3</div>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { PerfEdge } from "@/components/bench/primitives";
+import { ArrowLeft, PerfEdge } from "@/components/bench/primitives";
 
 export function LegalLayout({ title, date, children }: { title: string; date: string; children: ReactNode }) {
   return (
@@ -8,7 +8,7 @@ export function LegalLayout({ title, date, children }: { title: string; date: st
       <section className="field-orange">
         <PerfEdge hole="ink" className="h-4" />
         <div className="mx-auto max-w-[80rem] px-4 py-10 sm:px-6 md:py-14">
-          <Link href="/" className="label-caps text-ink/80 hover:text-ink">◀ Home</Link>
+          <Link href="/" className="label-caps inline-flex items-center gap-1.5 text-ink/80 hover:text-ink"><ArrowLeft /> Home</Link>
           <h1 className="mt-5 text-[clamp(2.6rem,7vw,4.5rem)] font-semibold text-ink">{title}</h1>
           <p className="label-caps mt-3 text-ink/80">Last updated {date}</p>
         </div>

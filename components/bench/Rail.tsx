@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { PRODUCTS, frameNo } from "@/lib/products";
 import { ScreenFor } from "@/components/screens";
 import { ScaledScreen } from "./ScaledScreen";
-import { PerfEdge, Pin, PlateLink, TapeFlag } from "./primitives";
+import { ArrowDown, ArrowLeft, ArrowRight, PerfEdge, Pin, PlateLink, TapeFlag } from "./primitives";
 import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = "stellar.rail.frame";
@@ -14,7 +14,8 @@ const STORAGE_KEY = "stellar.rail.frame";
 /* The select rail: twelve product frames on a perforated strip.
    Scrubs with native inertia, settles on frame pitch via scroll-snap,
    the tape flag follows the frame in view, and the trims below re-pin
-   to that product's stills. */
+   to that product's feature lines (one vignette exists per product,
+   so the trims carry text, not stills). */
 export function Rail() {
   const scroller = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -115,9 +116,9 @@ export function Rail() {
           <TickNumbers left={left} frameW={frameW + 12} padStart={padStart} />
         </div>
 
-        {/* Tape flag follows the active frame */}
-        <div className="pointer-events-none absolute left-0 top-9 z-20 h-10 w-full overflow-hidden" aria-hidden>
-          <motion.div className="absolute top-0" animate={{ x: flagX }} transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 260, damping: 28 }} style={{ left: `calc(${padStart} + ${frameW}px - 2.75rem)` }}>
+        {/* Tape flag folded over the perforation of the frame in view */}
+        <div className="pointer-events-none absolute left-0 top-6 z-20 h-[8.5rem] w-full overflow-hidden" aria-hidden>
+          <motion.div className="absolute top-0" animate={{ x: flagX }} transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 260, damping: 28 }} style={{ left: `calc(${padStart} + ${frameW}px - 4.5rem)` }}>
             <TapeFlag label={frameNo(current.frame)} />
           </motion.div>
         </div>
@@ -183,9 +184,9 @@ export function Rail() {
               On the pins · <span className="text-edge">{current.name}</span> · {current.platform}
             </p>
             <div className="flex items-center gap-3">
-              <button type="button" onClick={() => goTo(Math.max(active - 1, 0))} className="label-caps text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === 0} aria-label="Previous frame">◀ Prev</button>
+              <button type="button" onClick={() => goTo(Math.max(active - 1, 0))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === 0} aria-label="Previous frame"><ArrowLeft /> Prev</button>
               <span className="label-caps tabular text-orange">{frameNo(active + 1)} / {frameNo(PRODUCTS.length)}</span>
-              <button type="button" onClick={() => goTo(Math.min(active + 1, PRODUCTS.length - 1))} className="label-caps text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === PRODUCTS.length - 1} aria-label="Next frame">Next ▶</button>
+              <button type="button" onClick={() => goTo(Math.min(active + 1, PRODUCTS.length - 1))} className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange disabled:opacity-40" disabled={active === PRODUCTS.length - 1} aria-label="Next frame">Next <ArrowRight /></button>
             </div>
           </div>
 
@@ -205,7 +206,7 @@ export function Rail() {
             ))}
             <div className="col-span-2 flex flex-col items-start justify-end gap-3 sm:col-span-4 lg:col-span-1 lg:items-center">
               <PlateLink href={`/products/${current.slug}`} tone="secondary" className="w-full">Open frame {frameNo(current.frame)}</PlateLink>
-              <Link href="#products" className="label-caps text-edge-dim hover:text-orange">All twelve, by scene ↓</Link>
+              <Link href="#products" className="label-caps inline-flex items-center gap-1.5 text-edge-dim hover:text-orange">All twelve, by scene <ArrowDown /></Link>
             </div>
           </div>
         </div>

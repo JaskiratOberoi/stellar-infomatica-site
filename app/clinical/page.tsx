@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PathologyGrid } from "@/components/clinical/PathologyGrid";
 import { MoMExplainer } from "@/components/clinical/MoMExplainer";
-import { PerfEdge, PlateLink, SceneHead } from "@/components/bench/primitives";
+import { ArrowLeft, ArrowRight, PerfEdge, PlateLink, SceneHead } from "@/components/bench/primitives";
 
 export const metadata: Metadata = {
   title: "Clinical logic — how BioSentry computes risk",
@@ -24,7 +24,7 @@ export default function ClinicalPage() {
       <section className="field-orange">
         <PerfEdge hole="ink" className="h-4" />
         <div className="mx-auto max-w-[80rem] px-4 py-12 sm:px-6 md:py-20">
-          <Link href="/products/biosentry" className="label-caps text-ink/80 hover:text-ink">◀ Frame 06 · Stellar BioSentry</Link>
+          <Link href="/products/biosentry" className="label-caps inline-flex items-center gap-1.5 text-ink/80 hover:text-ink"><ArrowLeft /> Frame 06 · Stellar BioSentry</Link>
           <h1 className="mt-5 max-w-[14ch] text-[clamp(3rem,8vw,6rem)] font-semibold text-ink">The science of probability.</h1>
           <p className="mt-6 max-w-[56ch] text-[1.125rem] text-ink/85 md:text-[1.25rem]">
             The pathologies, markers and corrections that drive the BioSentry engine, shown with the working. Decision support for qualified professionals; the clinician signs the result.
@@ -55,7 +55,7 @@ export default function ClinicalPage() {
         </ul>
         <div className="mt-10 flex flex-wrap gap-4">
           <PlateLink href="/products/biosentry" tone="secondary">Open frame 06</PlateLink>
-          <Link href="/disclaimer" className="label-caps self-center text-edge-dim hover:text-orange">Read the clinical disclaimer ▸</Link>
+          <Link href="/disclaimer" className="label-caps inline-flex items-center gap-1.5 self-center text-edge-dim hover:text-orange">Read the clinical disclaimer <ArrowRight /></Link>
         </div>
       </section>
     </>
