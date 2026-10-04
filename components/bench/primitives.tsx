@@ -81,7 +81,7 @@ function PlateHoles({ tone }: { tone: PlateProps["tone"] }) {
 }
 
 const plateBase =
-  "relative inline-flex items-center justify-center font-display uppercase tracking-[0.14em] whitespace-nowrap select-none transition-[background-color,color,transform] duration-200 ease-out active:translate-y-px shadow-[0_2px_0_rgba(0,0,0,0.5)]";
+  "relative inline-flex items-center justify-center font-display uppercase tracking-[0.14em] whitespace-nowrap select-none transition-[background-color,color,transform] duration-200 ease-out active:translate-y-px shadow-[0_3px_8px_-2px_rgba(0,0,0,0.5)]";
 const plateTone = {
   primary: "bg-orange text-ink hover:bg-tape",
   secondary: "border border-orange text-orange hover:bg-orange hover:text-ink",

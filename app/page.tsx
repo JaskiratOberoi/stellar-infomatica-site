@@ -72,7 +72,7 @@ export default function Home() {
       ))}
 
       {/* ── Set aside, still reachable ───────────────────────────── */}
-      <section className="mx-auto mt-28 max-w-[80rem] px-4 sm:px-6" aria-labelledby="pins">
+      <section id="pins" className="mx-auto mt-28 max-w-[80rem] scroll-mt-24 px-4 sm:px-6" aria-label="Set aside, still reachable">
         <SceneHead scene="On the pins" title="Set aside, still reachable" line="What is not in this cut hangs here in plain sight. We would rather you knew." />
         <div className="mt-2 h-px w-full bg-edge-dim/50" aria-hidden />
         <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">

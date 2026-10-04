@@ -118,7 +118,8 @@ export function Rail() {
 
         {/* Tape flag folded over the perforation of the frame in view */}
         <div className="pointer-events-none absolute left-0 top-6 z-20 h-[8.5rem] w-full overflow-hidden" aria-hidden>
-          <motion.div className="absolute top-0" animate={{ x: flagX }} transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 260, damping: 28 }} style={{ left: `calc(${padStart} + ${frameW}px - 4.5rem)` }}>
+          {/* hangs over the frame's left corner, where only its numeral sits */}
+          <motion.div className="absolute top-0" animate={{ x: flagX }} transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 260, damping: 28 }} style={{ left: `calc(${padStart} + 0.35rem)` }}>
             <TapeFlag label={frameNo(current.frame)} />
           </motion.div>
         </div>

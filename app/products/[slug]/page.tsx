@@ -60,7 +60,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div className="bg-char">
           <div className="p-3 sm:p-5">
             <div className="bg-punch p-2 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.25)] sm:p-3">
-              <ScaledScreen designWidth={960} aspect={16 / 9}>
+              <ScaledScreen designWidth={720} aspect={16 / 10}>
                 <ScreenFor slug={p.slug} />
               </ScaledScreen>
             </div>
