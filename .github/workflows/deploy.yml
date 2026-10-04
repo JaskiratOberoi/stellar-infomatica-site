@@ -2,40 +2,32 @@ name: Build and Deploy
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 jobs:
-  build-and-deploy:
+  # DEPLOY IS PAUSED. This job only lists the FTP home (read-only) so the
+  # contents of the server can be verified before any further sync.
+  list-server:
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
-
-      - name: 🟢 Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: 🔨 Build Project
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp >/dev/null
+      - name: List FTP home (read-only)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          npm ci
-          npm run build
-
-      - name: 📂 Sync files
-        id: ftp-deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./out/
-          server-dir: ./
-          protocol: ftps
-          state-name: .ftp-deploy-sync-v2.json
-          dangerous-clean-slate: true
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.ftp-deploy-sync-v2.json
-          log-level: verbose
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -p 21 "$FTP_SERVER" -e '
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate no;
+            set net:timeout 30;
+            echo "== pwd ==";
+            pwd;
+            echo "== top level ==";
+            cls -la;
+            echo "== one level up ==";
+            cls -la ..;
+            echo "== recursive, first 600 entries ==";
+            find . | head -600;
+            quit'
