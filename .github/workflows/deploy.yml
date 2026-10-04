@@ -28,6 +28,9 @@ jobs:
             cls -la;
             echo "== one level up ==";
             cls -la ..;
-            echo "== recursive, first 600 entries ==";
-            find . | head -600;
+            echo "== autobot =="; cls -la autobot; find autobot | head -300;
+            echo "== sense =="; cls -la sense; find sense | head -300;
+            echo "== matter =="; cls -la matter; find matter | head -300;
+            echo "== api-sense =="; cls -la api-sense; find api-sense | head -300;
+            echo "== out =="; cls -la out;
             quit'
