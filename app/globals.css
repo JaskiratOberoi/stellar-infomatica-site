@@ -3,132 +3,236 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ───────────────────────────────────────────────────────────
+   Stellar Infomatica — Cutting Bench world
+   Ink black field, grain orange rail, punched white windows.
+   One condensed grotesk. State is a mark, never a hue.
+   ─────────────────────────────────────────────────────────── */
+
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-ink: #0a0a0a;
+  --color-char: #1a1a1a;
+  --color-spool: #2e2e2e;
+  --color-spool-light: #3d3d3d;
+  --color-orange: #ff5a1f;
+  --color-orange-deep: #d9480f;
+  --color-orange-ink: #3a1507;
+  --color-tape: #ff7a3d;
+  --color-punch: #ffffff;
+  --color-edge: #f2f2f2;
+  --color-edge-dim: #b8b8b8;
+
+  /* shadcn compatibility, mapped onto the world */
+  --color-background: var(--color-ink);
+  --color-foreground: var(--color-edge);
+  --color-card: var(--color-char);
+  --color-card-foreground: var(--color-edge);
+  --color-popover: var(--color-char);
+  --color-popover-foreground: var(--color-edge);
+  --color-primary: var(--color-orange);
+  --color-primary-foreground: var(--color-ink);
+  --color-secondary: var(--color-spool);
+  --color-secondary-foreground: var(--color-edge);
+  --color-muted: var(--color-spool);
+  --color-muted-foreground: var(--color-edge-dim);
+  --color-accent: var(--color-spool);
+  --color-accent-foreground: var(--color-edge);
+  --color-destructive: #ff3b1f;
+  --color-border: var(--color-spool);
+  --color-input: var(--color-spool);
+  --color-ring: var(--color-orange);
+
+  --font-display: var(--font-barlow-condensed), "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-body: var(--font-barlow), "Barlow", system-ui, sans-serif;
+
+  --radius: 2px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+
+  --frame-w: 15rem;
+  --frame-gap: 0.75rem;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: #020617;
-  --foreground: #f8fafc;
-  --card: #020617;
-  --card-foreground: #f8fafc;
-  --popover: #020617;
-  --popover-foreground: #f8fafc;
-  --primary: #06b6d4;
-  --primary-foreground: #020617;
-  --secondary: #d946ef;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  --destructive: #ef4444;
-  --destructive-foreground: #f8fafc;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #06b6d4;
-  --chart-1: #06b6d4;
-  --chart-2: #d946ef;
-  --chart-3: #3b82f6;
-  --chart-4: #8b5cf6;
-  --chart-5: #ec4899;
-  --sidebar: #020617;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #06b6d4;
-  --sidebar-primary-foreground: #020617;
-  --sidebar-accent: #1e293b;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: #1e293b;
-  --sidebar-ring: #06b6d4;
-}
-
-.dark {
-  --background: #020617;
-  --foreground: #f8fafc;
-  --card: #020617;
-  --card-foreground: #f8fafc;
-  --popover: #020617;
-  --popover-foreground: #f8fafc;
-  --primary: #06b6d4;
-  --primary-foreground: #020617;
-  --secondary: #d946ef;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #f8fafc;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #06b6d4;
-  --chart-1: #06b6d4;
-  --chart-2: #d946ef;
-  --chart-3: #3b82f6;
-  --chart-4: #8b5cf6;
-  --chart-5: #ec4899;
-  --sidebar: #020617;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #06b6d4;
-  --sidebar-primary-foreground: #020617;
-  --sidebar-accent: #1e293b;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: #1e293b;
-  --sidebar-ring: #06b6d4;
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+  --border: #2e2e2e;
+  --ring: #ff5a1f;
+  --radius: 2px;
+  color-scheme: dark;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
-
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--color-spool);
   }
-
   body {
-    @apply bg-background text-foreground;
+    background: var(--color-ink);
+    color: var(--color-edge);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    font-feature-settings: "tnum" 1, "ss01" 1;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, .display {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--color-orange);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 3px;
+  }
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+  input, textarea {
+    caret-color: var(--color-orange);
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-orange) var(--color-char);
+  }
+  ::-webkit-scrollbar { height: 10px; width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-char); }
+  ::-webkit-scrollbar-thumb { background: var(--color-orange); border: 2px solid var(--color-char); }
+  code, kbd, .tabular { font-variant-numeric: tabular-nums; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   }
 }
 
-@utility glass-panel {
-  @apply bg-slate-950/70 backdrop-blur-md border border-slate-800;
+/* Film grain: one fixed layer over everything, multiplied so it never lifts the black. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+  animation: grain-shift 1.2s steps(6) infinite;
 }
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2%, 1%); }
+  40% { transform: translate(1%, -2%); }
+  60% { transform: translate(-1%, 2%); }
+  80% { transform: translate(2%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grain::after { animation: none; }
+}
+
+/* Orange grain surface: coarser, denser noise baked into the orange field. */
+@utility field-orange {
+  background-color: var(--color-orange);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  background-size: 160px 160px;
+  color: var(--color-ink);
+}
+
+/* Perforation strips: a row of punched holes along film edges. */
+@utility perf-x {
+  background-image: radial-gradient(circle at center, var(--perf-hole, var(--color-ink)) 0 32%, transparent 34%);
+  background-size: 1.25rem 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+@utility perf-y {
+  background-image: radial-gradient(circle at center, var(--perf-hole, var(--color-ink)) 0 32%, transparent 34%);
+  background-size: 100% 1.25rem;
+  background-repeat: repeat-y;
+  background-position: center;
+}
+/* Square sprocket variant used on the orange rail (reads truer to 35mm). */
+@utility sprocket-x {
+  background-image: linear-gradient(var(--perf-hole, var(--color-ink)), var(--perf-hole, var(--color-ink)));
+  background-size: 0.6rem 0.5rem;
+  background-repeat: repeat-x;
+  background-position: 0.4rem center;
+}
+
+/* Rail ticks: hairline frame-count ticks with a taller major every 5. */
+@utility rail-ticks {
+  background-image:
+    linear-gradient(to right, var(--tick, var(--color-ink)) 1px, transparent 1px),
+    linear-gradient(to right, var(--tick, var(--color-ink)) 1px, transparent 1px);
+  background-size: calc(var(--frame-w) / 5) 40%, var(--frame-w) 100%;
+  background-repeat: repeat-x;
+  background-position: 0 bottom, 0 bottom;
+}
+
+/* Grease-pencil cross: struck across a frame that is set aside. */
+@utility grease-cross {
+  position: relative;
+}
+.grease-cross::before,
+.grease-cross::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 50%;
+  height: 3px;
+  background: var(--color-edge);
+  opacity: 0.9;
+  transform: rotate(32deg);
+  border-radius: 2px;
+  filter: url(#grease);
+}
+.grease-cross::after { transform: rotate(-32deg); }
+
+/* Hairline rules in the world's weight */
+@utility rule-edge { border-color: color-mix(in oklab, var(--color-edge) 22%, transparent); }
+@utility rule-orange { border-color: var(--color-orange); }
+
+/* Labels: caps, tracked, condensed */
+@utility label-caps {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8125rem;
+  line-height: 1;
+}
+
+/* Scroll snapping rail */
+@utility snap-rail {
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+@utility snap-frame { scroll-snap-align: start; }
+
+/* Hanging trims swing */
+@keyframes swing {
+  0% { transform: rotate(var(--swing-from, 4deg)); }
+  40% { transform: rotate(calc(var(--swing-from, 4deg) * -0.6)); }
+  70% { transform: rotate(calc(var(--swing-from, 4deg) * 0.3)); }
+  100% { transform: rotate(0deg); }
+}
+.swing { transform-origin: top center; animation: swing 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+.hide-scrollbar { scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }

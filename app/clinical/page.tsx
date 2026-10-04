@@ -1,132 +1,63 @@
-"use client";
-
-import { Card } from "@/components/ui/card";
+import type { Metadata } from "next";
+import Link from "next/link";
 import { PathologyGrid } from "@/components/clinical/PathologyGrid";
 import { MoMExplainer } from "@/components/clinical/MoMExplainer";
+import { PerfEdge, PlateLink, SceneHead } from "@/components/bench/primitives";
+
+export const metadata: Metadata = {
+  title: "Clinical logic — how BioSentry computes risk",
+  description: "The pathologies, markers, MoM normalisation and covariates behind the Stellar BioSentry prenatal screening engine.",
+};
+
+const vectors = [
+  ["IVF treatment", "Correction factors for in-vitro fertilisation pregnancies, dated from the transfer."],
+  ["Smoking status", "Maternal smoking shifts PAPP-A and free β-hCG; the medians are adjusted."],
+  ["Maternal weight", "Marker concentration is corrected for maternal weight before MoM is computed."],
+  ["Ethnicity", "Population-specific median adjustments, including South Asian profiles."],
+  ["Gestational age", "The axis every marker is normalised on; dated by LMP or ultrasound (CRL or BPD)."],
+  ["Diabetes", "Type 1 and type 2 diabetes carry their own marker corrections."],
+];
 
 export default function ClinicalPage() {
-    return (
-        <div className="min-h-screen bg-slate-950">
-            {/* Hero Section */}
-            <section className="relative py-24 px-4 overflow-hidden">
-                {/* Grid Pattern Background */}
-                <div 
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                        backgroundImage: `
-                            linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px)
-                        `,
-                        backgroundSize: '40px 40px'
-                    }}
-                />
-                
-                <div className="container mx-auto max-w-6xl relative z-10">
-                    <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            The Science of Probability.
-                        </h1>
-                        <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                            Deep dive into the algorithms, markers, and pathologies that drive the Stellar Engine.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Main Content */}
-            <div className="container mx-auto px-4 max-w-6xl pb-24">
-                
-                {/* Section A: Target Pathologies */}
-                <section className="mb-24">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                        Target Pathologies
-                    </h2>
-                    <PathologyGrid />
-                </section>
-
-                {/* Section B: The Mathematics of Deviation (MoM) */}
-                <section className="mb-24">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                        The Mathematics of Deviation (MoM)
-                    </h2>
-                    <MoMExplainer />
-                </section>
-
-                {/* Section C: Input Vectors */}
-                <section>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                        Input Vectors
-                    </h2>
-                    <Card className="glass-panel p-8 border-slate-800">
-                        <p className="text-slate-300 mb-6 leading-relaxed">
-                            Risk factors and covariates that influence marker levels and final risk calculations.
-                        </p>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-lg border border-slate-800">
-                                <div className="w-2 h-2 rounded-full bg-cyan-500 mt-2 flex-shrink-0"></div>
-                                <div>
-                                    <h4 className="text-white font-semibold mb-1">IVF Treatment</h4>
-                                    <p className="text-slate-400 text-sm">
-                                        Correction factors applied for in-vitro fertilization pregnancies.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-lg border border-slate-800">
-                                <div className="w-2 h-2 rounded-full bg-cyan-500 mt-2 flex-shrink-0"></div>
-                                <div>
-                                    <h4 className="text-white font-semibold mb-1">Smoking Status</h4>
-                                    <p className="text-slate-400 text-sm">
-                                        Maternal smoking affects PAPP-A and free β-hCG levels.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-lg border border-slate-800">
-                                <div className="w-2 h-2 rounded-full bg-cyan-500 mt-2 flex-shrink-0"></div>
-                                <div>
-                                    <h4 className="text-white font-semibold mb-1">Maternal Weight</h4>
-                                    <p className="text-slate-400 text-sm">
-                                        Weight-based adjustments for marker concentration calculations.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-lg border border-slate-800">
-                                <div className="w-2 h-2 rounded-full bg-cyan-500 mt-2 flex-shrink-0"></div>
-                                <div>
-                                    <h4 className="text-white font-semibold mb-1">Ethnicity</h4>
-                                    <p className="text-slate-400 text-sm">
-                                        Population-specific median adjustments for different ethnic groups.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-lg border border-slate-800">
-                                <div className="w-2 h-2 rounded-full bg-cyan-500 mt-2 flex-shrink-0"></div>
-                                <div>
-                                    <h4 className="text-white font-semibold mb-1">Gestational Age</h4>
-                                    <p className="text-slate-400 text-sm">
-                                        Critical factor for marker level normalization and risk calculation.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start gap-3 p-4 bg-slate-900/30 rounded-lg border border-slate-800">
-                                <div className="w-2 h-2 rounded-full bg-cyan-500 mt-2 flex-shrink-0"></div>
-                                <div>
-                                    <h4 className="text-white font-semibold mb-1">Diabetes</h4>
-                                    <p className="text-slate-400 text-sm">
-                                        Type 1 and Type 2 diabetes require marker level corrections.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </Card>
-                </section>
-            </div>
+  return (
+    <>
+      <section className="field-orange">
+        <PerfEdge hole="ink" className="h-4" />
+        <div className="mx-auto max-w-[80rem] px-4 py-12 sm:px-6 md:py-20">
+          <Link href="/products/biosentry" className="label-caps text-ink/80 hover:text-ink">◀ Frame 06 · Stellar BioSentry</Link>
+          <h1 className="mt-5 max-w-[14ch] text-[clamp(3rem,8vw,6rem)] font-semibold text-ink">The science of probability.</h1>
+          <p className="mt-6 max-w-[56ch] text-[1.125rem] text-ink/85 md:text-[1.25rem]">
+            The pathologies, markers and corrections that drive the BioSentry engine, shown with the working. Decision support for qualified professionals; the clinician signs the result.
+          </p>
         </div>
-    );
-}
+        <PerfEdge hole="ink" className="h-4" />
+      </section>
 
+      <section className="mx-auto mt-20 max-w-[80rem] px-4 sm:px-6">
+        <SceneHead scene="A" title="Target pathologies" line="What the engine screens for, and which markers each pathology reads." />
+        <div className="mt-10"><PathologyGrid /></div>
+      </section>
+
+      <section className="mx-auto mt-24 max-w-[80rem] px-4 sm:px-6">
+        <SceneHead scene="B" title="The mathematics of deviation" line="Multiples of the median: how a raw marker value becomes a comparable number." />
+        <div className="mt-10"><MoMExplainer /></div>
+      </section>
+
+      <section className="mx-auto mt-24 max-w-[80rem] px-4 sm:px-6">
+        <SceneHead scene="C" title="Input vectors" line="Covariates that move the medians before any risk is computed." />
+        <ul className="mt-10 grid gap-px border border-spool bg-spool sm:grid-cols-2 lg:grid-cols-3">
+          {vectors.map(([h, t]) => (
+            <li key={h} className="bg-ink p-6">
+              <h3 className="text-[1.6rem] text-edge">{h}</h3>
+              <p className="mt-2 text-edge-dim">{t}</p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-10 flex flex-wrap gap-4">
+          <PlateLink href="/products/biosentry" tone="secondary">Open frame 06</PlateLink>
+          <Link href="/disclaimer" className="label-caps self-center text-edge-dim hover:text-orange">Read the clinical disclaimer ▸</Link>
+        </div>
+      </section>
+    </>
+  );
+}
