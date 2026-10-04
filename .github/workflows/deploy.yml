@@ -28,9 +28,10 @@ jobs:
             cls -la;
             echo "== one level up ==";
             cls -la ..;
-            echo "== autobot =="; cls -la autobot; find autobot | head -300;
-            echo "== sense =="; cls -la sense; find sense | head -300;
-            echo "== matter =="; cls -la matter; find matter | head -300;
-            echo "== api-sense =="; cls -la api-sense; find api-sense | head -300;
+            echo "== autobot top =="; cls -la autobot; cls -la "autobot/Listec Automation";
+            echo "== autobot files (no .git) =="; find "autobot/Listec Automation" | grep -v "/.git/" | head -200;
+            echo "== matter =="; cls -la matter; find matter | head -120;
+            echo "== api-sense =="; cls -la api-sense; find api-sense | head -120;
             echo "== out =="; cls -la out;
+            echo "== sense counts =="; find sense | wc -l;
             quit'
