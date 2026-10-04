@@ -28,7 +28,6 @@ jobs:
             cls -la;
             echo "== one level up ==";
             cls -la ..;
-            echo "== autobot recursive (no .git) =="; cls -laR autobot | grep -v "/.git" | head -220;
-            echo "== autobot .git marker =="; cls -la autobot/*/.git | head -5;
-            echo "== biosentry =="; cls -la biosentry; find biosentry | head -40;
+            echo "== autobot (no .git objects) =="; find autobot | grep -v "/.git/" | head -250;
+            echo "== autobot git refs =="; find autobot | grep -E "/.git/(HEAD|config|refs/heads)" | head -10;
             quit'
