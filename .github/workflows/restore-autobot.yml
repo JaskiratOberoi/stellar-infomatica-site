@@ -1,0 +1,45 @@
+name: Restore autobot files
+# One-off, manual job. Re-uploads the files that the cancelled clean-slate
+# sync removed from /public_html/autobot/Listec Automation/. The files are
+# delivered through repository secrets (never committed, never printed) and
+# uploaded add-only: nothing on the server is deleted or overwritten.
+on:
+  workflow_dispatch:
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp >/dev/null
+      - name: Unpack the restore set
+        env:
+          C0: ${{ secrets.AUTOBOT_RESTORE_0 }}
+          C1: ${{ secrets.AUTOBOT_RESTORE_1 }}
+          C2: ${{ secrets.AUTOBOT_RESTORE_2 }}
+          C3: ${{ secrets.AUTOBOT_RESTORE_3 }}
+          C4: ${{ secrets.AUTOBOT_RESTORE_4 }}
+        run: |
+          set -e
+          mkdir -p restore
+          printf '%s%s%s%s%s' "$C0" "$C1" "$C2" "$C3" "$C4" | base64 -d > restore.tgz
+          tar -xzf restore.tgz -C restore
+          echo "files to restore: $(find restore -type f | wc -l)"
+          find restore -type f | sed 's|^restore/||' | sort
+      - name: Upload add-only to autobot/Listec Automation
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" -p 21 "$FTP_SERVER" -e '
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate no;
+            set net:timeout 60;
+            cd autobot;
+            cd Listec*;
+            pwd;
+            mirror -R --only-missing --no-perms --verbose=1 restore .;
+            echo "== after ==";
+            cls -la;
+            quit'
